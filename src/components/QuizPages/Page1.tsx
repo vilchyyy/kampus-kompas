@@ -10,8 +10,8 @@ export const Page1 = ({ nextPage }: Props) => {
   const { setUserType } = useFormStore();
   return (
     <motion.div
-      initial={{ opacity: 0, display: "none" }}
-      animate={{ opacity: 1, display: "flex", transition: { delay: 0.5 } }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="flex flex-col items-center gap-5"
     >
@@ -20,7 +20,7 @@ export const Page1 = ({ nextPage }: Props) => {
       >
         Kim jesteś?
       </motion.h2>
-      <motion.div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row">
+      <motion.div className="flex w-full flex-col items-center justify-center gap-4 lg:flex-row">
         <MotionButton
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
@@ -28,6 +28,7 @@ export const Page1 = ({ nextPage }: Props) => {
             setUserType("parent");
             nextPage();
           }}
+          className="w-80 lg:w-auto"
         >
           Rodzicem
         </MotionButton>
@@ -38,6 +39,7 @@ export const Page1 = ({ nextPage }: Props) => {
             setUserType("schoolGraduate");
             nextPage();
           }}
+          className="w-80 lg:w-auto"
         >
           Absolwentem szkoły ponadpodstawowej
         </MotionButton>
@@ -48,6 +50,7 @@ export const Page1 = ({ nextPage }: Props) => {
             setUserType("collegeGraduate");
             nextPage();
           }}
+          className="w-80 lg:w-auto"
         >
           Absolwentem studiów
         </MotionButton>
@@ -58,6 +61,7 @@ export const Page1 = ({ nextPage }: Props) => {
             setUserType("abroadGraduate");
             nextPage();
           }}
+          className="w-80 lg:w-auto"
         >
           Absolwentem z zagranicy
         </MotionButton>

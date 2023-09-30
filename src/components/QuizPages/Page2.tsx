@@ -28,6 +28,7 @@ export const Page2 = ({ nextPage }: Props) => {
             setStudiesType("fullTime");
             nextPage();
           }}
+          className="w-60"
         >
           Studia dzienne
         </MotionButton>
@@ -38,6 +39,7 @@ export const Page2 = ({ nextPage }: Props) => {
             setStudiesType("partTime");
             nextPage();
           }}
+          className="w-60"
         >
           Studia zaoczne
         </MotionButton>
@@ -48,6 +50,7 @@ export const Page2 = ({ nextPage }: Props) => {
             setStudiesType("online");
             nextPage();
           }}
+          className="w-60"
         >
           Studia online
         </MotionButton>
