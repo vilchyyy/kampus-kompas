@@ -39,10 +39,6 @@ export const AllTypes = z.object({
   exchangeType: z.number(),
   innowationType: z.number(),
   areYouArtistType: z.number(),
-  soloOrTeamType: z.enum([
-    "solo"
-  , "team"
- ]),
   sociallyInterestedType: z.number(),
   techLoveType: z.number(),
   historyAndCultureType: z.number(),

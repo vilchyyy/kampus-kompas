@@ -24,7 +24,6 @@ type StudentType = number;
 type ExchangeType = number;
 type InnowationType = number;
 type AreYouArtistType = number;
-type SoloOrTeamType = "solo" | "team" ;
 type SociallyInterestedType = number;
 type TechLoveType = number;
 type HistoryAndCultureType = number;
@@ -60,8 +59,6 @@ interface FormState {
   setInnowationType: (innowationType: InnowationType) => void;
   areYouArtistType: AreYouArtistType;
   setAreYouArtistType: (areYouArtistType: AreYouArtistType) => void;
-  soloOrTeamType: SoloOrTeamType;
-  setSoloOrTeamType: (soloOrTeamType: SoloOrTeamType) => void;
   sociallyInterestedType: SociallyInterestedType;
   setSociallyInterestedType: (
     sociallyInterestedType: SociallyInterestedType,
@@ -111,8 +108,6 @@ export const useFormStore = create<FormState>()((set) => ({
   setInnowationType: (innowationType) => set({ innowationType }),
   areYouArtistType: 0,
   setAreYouArtistType: (areYouArtistType) => set({ areYouArtistType }),
-  soloOrTeamType: "solo",
-  setSoloOrTeamType: (soloOrTeamType) => set({ soloOrTeamType }),
   sociallyInterestedType: 0,
   setSociallyInterestedType: (sociallyInterestedType) =>
     set({ sociallyInterestedType }),
