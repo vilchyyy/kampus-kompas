@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 interface Props {
   nextPage(arg0?: number): void;
 }
-export const Page3 = ({ nextPage }: Props) => {
+export const Page7 = ({ nextPage }: Props) => {
   const { setWorkDestinationType } = useFormStore();
   return (
     <motion.div

@@ -5,34 +5,34 @@ type UserType =
   | "schoolGraduate"
   | "collegeGraduate"
   | "abroadGraduate"
-  ;
-type StudiesType = "fullTime" | "partTime" | "online";
-type RankingType = number;
-type CertType = number; 
+  ; //page1
+type StudiesType = "fullTime" | "partTime" | "online"; //page2
+type LocalizationType = number; //page3
+type LocalizationKmType = "50" | "100" | "200" | "300" | "500" ; //page3a
+type RankingType = number; //page4
+type CertType = number; //page5
 type WorkType =
   | "workWithHumans"
   | "workWithData"
   | "workWithNature"
-  ;
+  ; //page6
 type WorkDestinationType =
   | "office"
   | "science"
   | "manual"
   | "freelancer"
-  ;
-type StudentType = number;
-type ExchangeType = number;
-type InnowationType = number;
-type AreYouArtistType = number;
-type SociallyInterestedType = number;
-type TechLoveType = number;
-type HistoryAndCultureType = number;
-type EcologyType = number;
-type MediaInterestType = number;
-type TechnologyOrHumanityType = "technology" | "humanity" ;
-type WorkForSocietyOrScianceType = "society" | "science" ;
-type LocalizationType = number;
-type LocalizationKmType = "50" | "100" | "200" | "300" | "500" ;
+  ; //page7
+type StudentType = number; //page8
+type ExchangeType = number; //page9
+type InnowationType = number; //page10
+type AreYouArtistType = number; //page11
+type SociallyInterestedType = number; //page12
+type TechLoveType = number; //page13
+type HistoryAndCultureType = number;  //page14
+type EcologyType = number; //page15
+type MediaInterestType = number; //page16
+type TechnologyOrHumanityType = "technology" | "humanity" ; //page17
+type WorkForSocietyOrScianceType = "society" | "science" ; //page18
 
 interface FormState {
   userType: UserType;
