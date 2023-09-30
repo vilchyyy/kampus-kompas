@@ -3,7 +3,7 @@ import { GraduationCap, SchoolIcon, UsersIcon } from "lucide-react";
 import { IBM_Plex_Serif } from "next/font/google";
 import Head from "next/head";
 import Image from "next/image";
-import { z } from "zod";
+import type { z } from "zod";
 import Nav from "~/components/Nav";
 import { useFormStore } from "~/state/stateForm";
 import { api } from "~/utils/api";
