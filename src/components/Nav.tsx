@@ -4,6 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import { SearchIcon } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next"
 
 interface NavProps {
     className?: string;
@@ -12,6 +13,8 @@ interface NavProps {
 
 export default function Nav({className, logoFont}: NavProps){
     const router = useRouter();
+    const { t, i18n } = useTranslation()
+
     return (
         <>
        <div className="mx-auto hover:cursor-pointer flex w-full h-20 gap-6 px-4 justify-between items-center sm:max-w-screen-2xl">
@@ -30,7 +33,7 @@ export default function Nav({className, logoFont}: NavProps){
 
 
         <div className="flex w-full max-w-sm items-center space-x-2">
-            <Input type="text" placeholder="wyszukaj uczelnie..." />
+            <Input type="text" placeholder={t("wyszukaj uczelnie...")} />
             <Button className="w-10 p-2" type="submit">
                 <SearchIcon className="w-10 h-10"/>
             </Button>
