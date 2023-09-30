@@ -6,7 +6,7 @@ type UserType =
   | "collegeGraduate"
   | "abroadGraduate"; //page1
 type StudiesType = "fullTime" | "partTime" | "online"; //page2
-type LocalizationKmType = "50" | "100" | "200" | "300" | "500"; //page3a
+export type LocalizationKmType = "50" | "100" | "200" | "300" | "500"; //page3a
 type RankingType = number; //page4
 type CertType = number; //page5
 type WorkType = "workWithHumans" | "workWithData" | "workWithNature"; //page6

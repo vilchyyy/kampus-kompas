@@ -1,4 +1,3 @@
-import { useFormStore } from "~/state/stateForm";
 import { MotionButton } from "../MotionCompoenents";
 import { motion } from "framer-motion";
 import { ibm_serif } from "~/pages";
@@ -7,7 +6,6 @@ interface Props {
   nextPage(arg0?: number): void;
 }
 export const Page3 = ({ nextPage }: Props) => {
-  const { setRankingType } = useFormStore();
   return (
     <motion.div
       initial={{ opacity: 0, display: "none" }}
@@ -18,7 +16,7 @@ export const Page3 = ({ nextPage }: Props) => {
       <motion.h2
         className={`${ibm_serif.className} font scroll-m-20 border-b pb-2 text-center text-3xl font-semibold tracking-tight transition-colors first:mt-0`}
       >
-        Czy ma znaczenie dla ciebie ranking szkoły na tle ogólnopolskim?
+        Czy ma dla ciebie znaczenie lokalizacja uczelni?
       </motion.h2>
       <motion.div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row">
         <MotionButton
@@ -26,56 +24,20 @@ export const Page3 = ({ nextPage }: Props) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setRankingType(0);
-            nextPage();
+            nextPage(2);
           }}
         >
-          Bardzo się nie zgadzam
+          Nie
         </MotionButton>
         <MotionButton
           className=" w-52 md:w-36 lg:w-44"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setRankingType(1);
             nextPage();
           }}
         >
-          Nie zgadzam się
-        </MotionButton>
-        <MotionButton
-          className="w-52 md:w-36 lg:w-44"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => {
-            setRankingType(2);
-            nextPage();
-          }}
-        >
-          Bez zdania
-        </MotionButton>
-
-        <MotionButton
-          className="w-52 md:w-36 lg:w-44"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => {
-            setRankingType(3);
-            nextPage();
-          }}
-        >
-          Zgadzam się
-        </MotionButton>
-        <MotionButton
-          className="w-52 md:w-36 lg:w-44"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => {
-            setRankingType(4);
-            nextPage();
-          }}
-        >
-          Bardzo się zgadzam
+          Tak
         </MotionButton>
       </motion.div>
     </motion.div>
