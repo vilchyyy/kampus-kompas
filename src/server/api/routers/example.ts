@@ -14,10 +14,7 @@ export const AllTypes = z.object({
   , "online"
   , "evening"
  ]),
-  localizationType: z.enum([
-    "notImportant"
-  , "important"
- ]),
+  localizationType: z.number(),
   localizationKmType: z.enum([
     "50"
   , "100"
@@ -25,15 +22,8 @@ export const AllTypes = z.object({
   , "300"
   , "500"
  ]),
-  rankingType: z.enum([
-    "important"
-  , "notImportant"
- ]),
-  certType: z.enum([
-    "yesTechnician"
-  , "notImportant"
-  , "noHumanities"
- ]),
+  rankingType: z.number(),
+  certType: z.number(),
   workType: z.enum([
     "workWithHumans"
   , "workWithData"
@@ -50,46 +40,22 @@ export const AllTypes = z.object({
   , "practical"
   , "notImportant"
  ]),
-  exchangeType: z.enum([
-    "yes"
-  , "notImportant"
- ]),
-  innowationType: z.enum([
-    "yes"
-  , "notImportant"
- ]),
+  exchangeType: z.number(),
+  innowationType: z.number(),
   fieldWorkType: z.enum([
     "field"
   , "office"
  ]),
-  areYouArtistType: z.enum([
-    "yes"
-  , "no"
- ]),
+  areYouArtistType: z.number(),
   soloOrTeamType: z.enum([
     "solo"
   , "team"
  ]),
-  sociallyInterestedType: z.enum([
-    "yes"
-  , "no"
- ]),
-  techLoveType: z.enum([
-    "yes"
-  , "no"
- ]),
-  historyAndCultureType: z.enum([
-    "yes"
-  , "no"
- ]),
-  ecologyType: z.enum([
-    "yes"
-  , "no"
- ]),
-  mediaInterestType: z.enum([
-    "yes"
-  , "no"
- ]),
+  sociallyInterestedType: z.number(),
+  techLoveType: z.number(),
+  historyAndCultureType: z.number(),
+  ecologyType: z.number(),
+  mediaInterestType: z.number(),
   technologyOrHumanityType: z.enum([
     "technology"
   , "humanity"

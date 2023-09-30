@@ -7,8 +7,8 @@ type UserType =
   | "abroadGraduate"
   ;
 type StudiesType = "fullTime" | "partTime" | "online" | "evening" ;
-type RankingType = "important" | "notImportant" ;
-type CertType = "yesTechnician" | "notImportant" | "noHumanities" ;
+type RankingType = number;
+type CertType = number;
 type WorkType =
   | "workWithHumans"
   | "workWithData"
@@ -21,19 +21,19 @@ type WorkDestinationType =
   | "freelancer"
   ;
 type StudentType = "theoretical" | "practical" | "notImportant" ;
-type ExchangeType = "yes" | "notImportant" ;
-type InnowationType = "yes" | "notImportant" ;
+type ExchangeType = number;
+type InnowationType = number;
 type FieldWorkType = "field" | "office" ;
-type AreYouArtistType = "yes" | "no" ;
+type AreYouArtistType = number;
 type SoloOrTeamType = "solo" | "team" ;
-type SociallyInterestedType = "yes" | "no" ;
-type TechLoveType = "yes" | "no" ;
-type HistoryAndCultureType = "yes" | "no" ;
-type EcologyType = "yes" | "no" ;
-type MediaInterestType = "yes" | "no" ;
+type SociallyInterestedType = number;
+type TechLoveType = number;
+type HistoryAndCultureType = number;
+type EcologyType = number;
+type MediaInterestType = number;
 type TechnologyOrHumanityType = "technology" | "humanity" ;
 type WorkForSocietyOrScianceType = "society" | "science" ;
-type LocalizationType = "notImportant" | "important" ;
+type LocalizationType = number;
 type LocalizationKmType = "50" | "100" | "200" | "300" | "500" ;
 
 interface FormState {
@@ -94,13 +94,13 @@ export const useFormStore = create<FormState>()((set) => ({
   setUserType: (userType) => set({ userType }),
   studiesType:"fullTime",
   setStudiesType: (studiesType) => set({ studiesType }),
-  localizationType: "important",
+  localizationType: 0,
   setLocalizationType: (localizationType) => set({ localizationType }),
   localizationKmType: "50",
   setLocalizationKmType: (localizationKmType) => set({ localizationKmType }),
-  rankingType: "notImportant",
+  rankingType: 0,
   setRankingType: (rankingType) => set({ rankingType }),
-  certType: "yesTechnician",
+  certType: 0,
   setCertType: (certType) => set({ certType }),
   workType: "workWithHumans",
   setWorkType: (workType) => set({ workType }),
@@ -108,27 +108,27 @@ export const useFormStore = create<FormState>()((set) => ({
   setWorkDestinationType: (workDestinationType) => set({ workDestinationType }),
   studentType: "theoretical",
   setStudentType: (studentType) => set({ studentType }),
-  exchangeType: "yes",
+  exchangeType: 0,
   setExchangeType: (exchangeType) => set({ exchangeType }),
-  innowationType: "yes",
+  innowationType: 0,
   setInnowationType: (innowationType) => set({ innowationType }),
   fieldWorkType: "field",
   setFieldWorkType: (fieldWorkType) => set({ fieldWorkType }),
-  areYouArtistType: "yes",
+  areYouArtistType: 0,
   setAreYouArtistType: (areYouArtistType) => set({ areYouArtistType }),
   soloOrTeamType: "solo",
   setSoloOrTeamType: (soloOrTeamType) => set({ soloOrTeamType }),
-  sociallyInterestedType: "yes",
+  sociallyInterestedType: 0,
   setSociallyInterestedType: (sociallyInterestedType) =>
     set({ sociallyInterestedType }),
-  techLoveType: "yes",
+  techLoveType: 0,
   setTechLoveType: (techLoveType) => set({ techLoveType }),
-  historyAndCultureType: "yes",
+  historyAndCultureType: 0,
   setHistoryAndCultureType: (historyAndCultureType) =>
     set({ historyAndCultureType }),
-  ecologyType: "yes",
+  ecologyType: 0,
   setEcologyType: (ecologyType) => set({ ecologyType }),
-  mediaInterestType: "yes",
+  mediaInterestType: 0,
   setMediaInterestType: (mediaInterestType) => set({ mediaInterestType }),
   technologyOrHumanityType: "technology",
   setTechnologyOrHumanityType: (technologyOrHumanityType) =>
