@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Page1 } from "~/components/QuizPages/Page1";
 import { Page2 } from "~/components/QuizPages/Page2";
@@ -13,9 +12,15 @@ export default function Step1() {
   return (
     <div className="flex h-screen w-screen items-center justify-center p-2">
       <div className="flex gap-2">
-        {page === 0 && <Page1 nextPage={nextPage} />}
-        {page === 1 && <Page2 nextPage={nextPage} />}
-        {page === 2 && <Page3 nextPage={nextPage} />}
+        <AnimatePresence mode="popLayout">
+          {page === 0 && <Page1 nextPage={nextPage} />}
+        </AnimatePresence>
+        <AnimatePresence mode="popLayout">
+          {page === 1 && <Page2 nextPage={nextPage} />}
+        </AnimatePresence>
+        <AnimatePresence>
+          {page === 2 && <Page3 nextPage={nextPage} />}
+        </AnimatePresence>
       </div>
     </div>
   );

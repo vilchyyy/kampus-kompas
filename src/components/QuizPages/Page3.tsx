@@ -1,29 +1,33 @@
-import { Button } from "@/components/ui/button";
 import { useFormStore } from "~/state/stateForm";
+import { MotionButton } from "../MotionButton";
 
 interface Props {
   nextPage(arg0?: number): void;
 }
 export const Page3 = ({ nextPage }: Props) => {
-  const { setLocalization } = useFormStore();
+  const { setLocalizationType } = useFormStore();
   return (
     <div className="flex gap-2">
-      <Button
+      <MotionButton
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.9 }}
         onClick={() => {
-          setLocalization("notImportant");
+          setLocalizationType("notImportant");
           nextPage(2);
         }}
       >
         Nie ważnes
-      </Button>
-      <Button
+      </MotionButton>
+      <MotionButton
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.9 }}
         onClick={() => {
-          setLocalization("important");
+          setLocalizationType("important");
           nextPage();
         }}
       >
         Ważne
-      </Button>
+      </MotionButton>
     </div>
   );
 };
