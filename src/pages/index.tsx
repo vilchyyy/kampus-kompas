@@ -1,10 +1,13 @@
+import { Button } from "@/components/ui/button";
+import { ArrowDown01Icon, ArrowDownIcon } from "lucide-react";
 import { IBM_Plex_Serif } from "next/font/google";
 import Head from "next/head";
+import Image from "next/image";
 import Nav from "~/components/Nav";
 import { api } from "~/utils/api";
 
 const ibm_serif = IBM_Plex_Serif({
-  weight: '600',
+  weight: '700',
   subsets: ['latin']
 }) 
 
@@ -19,11 +22,27 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-between">
-        <Nav/>
-        <div className="container h-screen flex flex-col items-center justify-center gap-12 px-4 py-16 ">
-          <h1 className={ibm_serif.className + " text-5xl"}>
-            Dzień Dobry Piotrusiu
+        <Nav logoFont={ibm_serif.className} />
+        <div className="container h-screen flex flex-col items-center gap-6 px-4 py-10 ">
+          <h1 className={ibm_serif.className + " text-3xl sm:text-5xl text-slate-800"}>
+            Twoj asystent w wyborze ścieżki życia
           </h1>
+          <p className="text-lg">
+            Rozwiąż nasz quiz i dowiedz się, która uczelnia jest dla Ciebie idealna!
+            Zajmie Ci to tylko 5 minut!
+          </p>
+         
+          <div className="flex items-center justify-around w-full">
+            {/* <ArrowDownIcon className="w-10 h-10" /> */}
+            <p className="text-lg">Zobacz jakie to <span className="font-bold underline underline-offset-4">proste</span></p>
+
+            
+            <Button className="p-6 px-10" >
+              <p className="text-lg">Rozpocznij quiz</p>
+            </Button>
+          </div>
+           <Image src="/spektrum.png" className=" border-2 " width={500} height={500} alt="logo" />
+
           <p className="text-2xl">
             {hello.data ? hello.data.greeting : "Loading tRPC query..."}
           </p>
