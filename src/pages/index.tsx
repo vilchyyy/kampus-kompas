@@ -41,7 +41,7 @@ export default function Home() {
               <p className="text-lg">Rozpocznij quiz</p>
             </Button>
           </div>
-           <Image src="/spektrum.png" className=" border-2 " width={500} height={500} alt="logo" />
+           <Image src="/spektrum.png" className=" border-2 border-black " width={500} height={500} alt="logo" />
 
           <p className="text-2xl">
             {hello.data ? hello.data.greeting : "Loading tRPC query..."}
