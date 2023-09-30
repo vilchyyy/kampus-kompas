@@ -18,3 +18,43 @@ model Example {
 
     @@index([name])
 }
+
+model University {
+    id        Int        @id @default(autoincrement())
+    name      String
+    ranking   Float
+    x         Float
+    y         Float
+    publiczny Boolean
+    kierunki  Kierunek[]
+    createdAt DateTime   @default(now())
+    updatedAt DateTime   @updatedAt
+
+    @@index([name])
+}
+
+enum tryb {
+    stacjonarne
+    niestacjonarne
+    online
+}
+
+model Kierunek {
+    id           Int         @id @default(autoincrement())
+    name         String
+    tryb         tryb
+    techniczne Int
+    spoleczne  Int
+    humanistyczne Int
+    artystyczne Int
+    sciscle Int
+    przyrodnicze Int
+    medyczne Int
+    rolnicze Int
+    createdAt    DateTime    @default(now())
+    updatedAt    DateTime    @updatedAt
+    University   University? @relation(fields: [universityId], references: [id])
+    universityId Int?
+
+    @@index([name])
+}

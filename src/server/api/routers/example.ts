@@ -9,7 +9,7 @@ export const AllTypes = z.object({
     "abroadGraduate",
   ]),
   studiesType: z.enum(["fullTime", "partTime", "online", "evening"]),
-  localizationKmType: z.enum(["50", "100", "200", "300", "500"]),
+  localizationKmType: z.enum(["50", "100", "200", "300", "500"]).or(z.undefined()),
   rankingType: z.number(),
   certType: z.number(),
   workType: z.enum(["workWithHumans", "workWithData", "workWithNature"]),
