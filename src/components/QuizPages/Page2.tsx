@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useFormStore } from "~/state/stateForm";
-import { MotionButton } from "../MotionButton";
+import { MotionButton } from "../MotionCompoenents";
 
 interface Props {
   nextPage(): void;
