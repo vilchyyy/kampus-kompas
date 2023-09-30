@@ -6,7 +6,7 @@ import { ibm_serif } from "~/pages";
 interface Props {
   nextPage(arg0?: number): void;
 }
-export const Page4 = ({ nextPage }: Props) => {
+export const Page16 = ({ nextPage }: Props) => {
   const { setMediaInterestType } = useFormStore();
   return (
     <motion.div
