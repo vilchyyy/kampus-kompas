@@ -6,8 +6,8 @@ import { ibm_serif } from "~/pages";
 interface Props {
   nextPage(arg0?: number): void;
 }
-export const Page7 = ({ nextPage }: Props) => {
-  const { setWorkDestinationType } = useFormStore();
+export const Page9 = ({ nextPage }: Props) => {
+  const { setExchangeType } = useFormStore();
   return (
     <motion.div
       initial={{ opacity: 0, display: "none" }}
@@ -18,49 +18,64 @@ export const Page7 = ({ nextPage }: Props) => {
       <motion.h2
         className={`${ibm_serif.className} font scroll-m-20 border-b pb-2 text-center text-3xl font-semibold tracking-tight transition-colors first:mt-0`}
       >
-        Czy preferujesz kierunki studiów prowadzące do pracy biurowej, fizyczna,
-        naukowej, czy może bardziej jako freelancer?
+        Interesują mnię programy wymiany między narodowej lub praktyki zawodowe.
       </motion.h2>
       <motion.div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row">
         <MotionButton
+          className="w-52 md:w-36 lg:w-44"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setWorkDestinationType("office");
+            setExchangeType(0);
             nextPage();
           }}
         >
-          Praca biurowa
+          Bardzo się nie zgadzam
         </MotionButton>
         <MotionButton
+          className=" w-52 md:w-36 lg:w-44"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setWorkDestinationType("science");
+            setExchangeType(1);
             nextPage();
           }}
         >
-          Praca naukowa
+          Nie zgadzam się
         </MotionButton>
         <MotionButton
+          className="w-52 md:w-36 lg:w-44"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setWorkDestinationType("manual");
+            setExchangeType(2);
             nextPage();
           }}
         >
-          Praca fizyczna
+          Bez zdania
+        </MotionButton>
+
+        <MotionButton
+          className="w-52 md:w-36 lg:w-44"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => {
+            setExchangeType(3);
+            nextPage();
+          }}
+        >
+          Zgadzam się
         </MotionButton>
         <MotionButton
+          className="w-52 md:w-36 lg:w-44"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setWorkDestinationType("freelancer");
+            setExchangeType(4);
             nextPage();
           }}
         >
-          Freelancerka
+          Bardzo się zgadzam
         </MotionButton>
       </motion.div>
     </motion.div>
