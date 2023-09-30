@@ -9,8 +9,17 @@ type UserType =
 type StudiesType = "fullTime" | "partTime" | "online" | "evening" | undefined;
 type RankingType = "important" | "notImportant" | undefined;
 type CertType = "yesTechnician" | "notImportant" | "noHumanities" | undefined;
-type WorkType = "workWithHumans" | "workWithData" | "workWithNature" | undefined;
-type WorkDestinationType = "office" | "science" | "manual" | "freelancer" | undefined;
+type WorkType =
+  | "workWithHumans"
+  | "workWithData"
+  | "workWithNature"
+  | undefined;
+type WorkDestinationType =
+  | "office"
+  | "science"
+  | "manual"
+  | "freelancer"
+  | undefined;
 type StudentType = "theoretical" | "practical" | "notImportant" | undefined;
 type ExchangeType = "yes" | "notImportant" | undefined;
 type InnowationType = "yes" | "notImportant" | undefined;
@@ -24,12 +33,18 @@ type EcologyType = "yes" | "no" | undefined;
 type MediaInterestType = "yes" | "no" | undefined;
 type TechnologyOrHumanityType = "technology" | "humanity" | undefined;
 type WorkForSocietyOrScianceType = "society" | "science" | undefined;
+type LocalizationType = "notImportant" | "important" | undefined;
+type LocalizationKmType = 50 | 100 | 200 | 300 | 500 | undefined;
 
 interface FormState {
   userType: UserType;
   setUserType: (userType: UserType) => void;
   studiesType: StudiesType;
   setStudiesType: (studiesType: StudiesType) => void;
+  localizationType: LocalizationType;
+  setLocalizationType: (localizationType: LocalizationType) => void;
+  localizationKmType: LocalizationKmType;
+  setLocalizationKmType: (localizationKmType: LocalizationKmType) => void;
   rankingType: RankingType;
   setRankingType: (rankingType: RankingType) => void;
   certType: CertType;
@@ -51,19 +66,27 @@ interface FormState {
   soloOrTeamType: SoloOrTeamType;
   setSoloOrTeamType: (soloOrTeamType: SoloOrTeamType) => void;
   sociallyInterestedType: SociallyInterestedType;
-  setSociallyInterestedType: (sociallyInterestedType: SociallyInterestedType) => void;
+  setSociallyInterestedType: (
+    sociallyInterestedType: SociallyInterestedType,
+  ) => void;
   techLoveType: TechLoveType;
   setTechLoveType: (techLoveType: TechLoveType) => void;
   historyAndCultureType: HistoryAndCultureType;
-  setHistoryAndCultureType: (historyAndCultureType: HistoryAndCultureType) => void;
+  setHistoryAndCultureType: (
+    historyAndCultureType: HistoryAndCultureType,
+  ) => void;
   ecologyType: EcologyType;
   setEcologyType: (ecologyType: EcologyType) => void;
   mediaInterestType: MediaInterestType;
   setMediaInterestType: (mediaInterestType: MediaInterestType) => void;
   technologyOrHumanityType: TechnologyOrHumanityType;
-  setTechnologyOrHumanityType: (technologyOrHumanityType: TechnologyOrHumanityType) => void;
+  setTechnologyOrHumanityType: (
+    technologyOrHumanityType: TechnologyOrHumanityType,
+  ) => void;
   workForSocietyOrScianceType: WorkForSocietyOrScianceType;
-  setWorkForSocietyOrScianceType: (workForSocietyOrScianceType: WorkForSocietyOrScianceType) => void;
+  setWorkForSocietyOrScianceType: (
+    workForSocietyOrScianceType: WorkForSocietyOrScianceType,
+  ) => void;
 }
 
 export const useFormStore = create<FormState>()((set) => ({
@@ -71,6 +94,10 @@ export const useFormStore = create<FormState>()((set) => ({
   setUserType: (userType) => set({ userType }),
   studiesType: undefined,
   setStudiesType: (studiesType) => set({ studiesType }),
+  localizationType: undefined,
+  setLocalizationType: (localizationType) => set({ localizationType }),
+  localizationKmType: undefined,
+  setLocalizationKmType: (localizationKmType) => set({ localizationKmType }),
   rankingType: undefined,
   setRankingType: (rankingType) => set({ rankingType }),
   certType: undefined,
@@ -92,17 +119,21 @@ export const useFormStore = create<FormState>()((set) => ({
   soloOrTeamType: undefined,
   setSoloOrTeamType: (soloOrTeamType) => set({ soloOrTeamType }),
   sociallyInterestedType: undefined,
-  setSociallyInterestedType: (sociallyInterestedType) => set({ sociallyInterestedType }),
+  setSociallyInterestedType: (sociallyInterestedType) =>
+    set({ sociallyInterestedType }),
   techLoveType: undefined,
   setTechLoveType: (techLoveType) => set({ techLoveType }),
   historyAndCultureType: undefined,
-  setHistoryAndCultureType: (historyAndCultureType) => set({ historyAndCultureType }),
+  setHistoryAndCultureType: (historyAndCultureType) =>
+    set({ historyAndCultureType }),
   ecologyType: undefined,
   setEcologyType: (ecologyType) => set({ ecologyType }),
   mediaInterestType: undefined,
   setMediaInterestType: (mediaInterestType) => set({ mediaInterestType }),
   technologyOrHumanityType: undefined,
-  setTechnologyOrHumanityType: (technologyOrHumanityType) => set({ technologyOrHumanityType }),
+  setTechnologyOrHumanityType: (technologyOrHumanityType) =>
+    set({ technologyOrHumanityType }),
   workForSocietyOrScianceType: undefined,
-  setWorkForSocietyOrScianceType: (workForSocietyOrScianceType) => set({ workForSocietyOrScianceType }),
+  setWorkForSocietyOrScianceType: (workForSocietyOrScianceType) =>
+    set({ workForSocietyOrScianceType }),
 }));
