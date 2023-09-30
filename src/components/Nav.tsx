@@ -14,13 +14,16 @@ export default function Nav({className, logoFont}: NavProps){
     const router = useRouter();
     return (
         <>
-       <div onClick={(e) => {
+       <div className="mx-auto hover:cursor-pointer flex w-full h-20 gap-6 px-4 justify-between items-center sm:max-w-screen-2xl">
+        <div className="flex gap-6 justify-center items-center mx-4">
+            <Image  onClick={(e) => {
               e.preventDefault();
               router.push("/").catch((err) => console.log(err));
-       }} className="hover:cursor-pointer flex w-full h-20 gap-6 px-4 justify-between items-center sm:max-w-screen-2xl">
-        <div className="flex gap-6 justify-center items-center mx-4">
-            <Image src="compass.svg" className="h-12 w-12 min-w-max -mr-3 " width={50} height={50} alt="logo" />
-            <p className="font-bold mr-4 sm:block hidden">KampusKompas</p>
+       }} src="compass.svg" className="h-12 w-12 min-w-max -mr-3 " width={50} height={50} alt="logo" />
+            <p  onClick={(e) => {
+              e.preventDefault();
+              router.push("/").catch((err) => console.log(err));
+       }} className="font-bold mr-4 sm:block hidden">KampusKompas</p>
             <p>FAQ</p>
             <p className="min-w-min">About&nbsp;Us</p>
         </div>

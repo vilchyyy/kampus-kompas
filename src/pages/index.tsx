@@ -17,7 +17,7 @@ export const ibm_serif = IBM_Plex_Serif({
 
 export default function Home() {
   const hello = api.example.hello.useQuery(
-    ( useFormStore.getState()  ) );
+    ( useFormStore.getState() as z.infer<typeof AllTypes> ) );
   console.log(hello.data)
   return (
     <>
