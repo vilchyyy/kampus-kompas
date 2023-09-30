@@ -19,9 +19,11 @@ type AreYouArtistType = "yes" | "no" | undefined;
 type SoloOrTeamType = "solo" | "team" | undefined;
 type SociallyInterestedType = "yes" | "no" | undefined;
 type TechLoveType = "yes" | "no" | undefined;
-/* 
-
-*/
+type HistoryAndCultureType = "yes" | "no" | undefined;
+type EcologyType = "yes" | "no" | undefined;
+type MediaInterestType = "yes" | "no" | undefined;
+type TechnologyOrHumanityType = "technology" | "humanity" | undefined;
+type WorkForSocietyOrScianceType = "society" | "science" | undefined;
 
 interface FormState {
   userType: UserType;
@@ -52,6 +54,16 @@ interface FormState {
   setSociallyInterestedType: (sociallyInterestedType: SociallyInterestedType) => void;
   techLoveType: TechLoveType;
   setTechLoveType: (techLoveType: TechLoveType) => void;
+  historyAndCultureType: HistoryAndCultureType;
+  setHistoryAndCultureType: (historyAndCultureType: HistoryAndCultureType) => void;
+  ecologyType: EcologyType;
+  setEcologyType: (ecologyType: EcologyType) => void;
+  mediaInterestType: MediaInterestType;
+  setMediaInterestType: (mediaInterestType: MediaInterestType) => void;
+  technologyOrHumanityType: TechnologyOrHumanityType;
+  setTechnologyOrHumanityType: (technologyOrHumanityType: TechnologyOrHumanityType) => void;
+  workForSocietyOrScianceType: WorkForSocietyOrScianceType;
+  setWorkForSocietyOrScianceType: (workForSocietyOrScianceType: WorkForSocietyOrScianceType) => void;
 }
 
 export const useFormStore = create<FormState>()((set) => ({
@@ -83,4 +95,14 @@ export const useFormStore = create<FormState>()((set) => ({
   setSociallyInterestedType: (sociallyInterestedType) => set({ sociallyInterestedType }),
   techLoveType: undefined,
   setTechLoveType: (techLoveType) => set({ techLoveType }),
+  historyAndCultureType: undefined,
+  setHistoryAndCultureType: (historyAndCultureType) => set({ historyAndCultureType }),
+  ecologyType: undefined,
+  setEcologyType: (ecologyType) => set({ ecologyType }),
+  mediaInterestType: undefined,
+  setMediaInterestType: (mediaInterestType) => set({ mediaInterestType }),
+  technologyOrHumanityType: undefined,
+  setTechnologyOrHumanityType: (technologyOrHumanityType) => set({ technologyOrHumanityType }),
+  workForSocietyOrScianceType: undefined,
+  setWorkForSocietyOrScianceType: (workForSocietyOrScianceType) => set({ workForSocietyOrScianceType }),
 }));
