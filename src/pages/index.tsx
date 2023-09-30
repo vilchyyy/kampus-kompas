@@ -34,12 +34,10 @@ export default function Home() {
               ibm_serif.className + " text-3xl text-slate-800 sm:text-5xl"
             }
           >
-            Twoj asystent w wyborze ścieżki życia
+            Twój asystent w wyborze ścieżki życia
           </h1>
           <p className=" sm:text-lg">
-
-          Rozwiąż nasz quiz i odkryj idealną uczelnię w 5 minut! Nasz algorytm dopasuje uczelnie do twoich preferencji i pokaże je na spektrum elastyczności i techniczności studiów. 
-          Oś pionowa to elastyczność studiów, od tradycyjnych do online, a oś pozioma to techniczność studiów, od politechnik do tradycyjnych.
+            Odpowiedz na nasz quiz i znajdź idealną uczelnię w zaledwie 5 minut! Nasz zaawansowany algorytm dopasuje uczelnie do Twoich indywidualnych preferencji i przedstawi je na wykresie, który uwzględnia elastyczność oraz techniczność oferowanych programów studiów. Na wykresie oś pionowa to elastyczność studiów, od tradycyjnych do online, a oś pozioma to techniczność studiów, od tradycyjnych do politechnik.
           </p>
 
           <div className="flex pb-8 w-full items-center justify-around sm:justify-start sm:gap-6 ">
@@ -62,22 +60,19 @@ export default function Home() {
             </div>
             <div className="flex h-full gap-8 flex-col max-w-lg">
               <div className="flex items-center gap-4">
-                <p>Jesteś maturzystą i poszukujesz idealnej uczelni w której zdobędziesz kompetencje i poszerzysz swoje grono przyjaciół?
-                  Dobrze trafiłeś, przystąp do 5 minutowego quizu i dowiedz się która uczelnia jest dla Ciebie najlepsza!
-                </p>
+                <p>
+                Jesteś na końcu liceum i chcesz znaleźć idealną uczelnię, która nie tylko pomoże Ci zdobyć kompetencje, ale także rozwinie Twój krąg przyjaciół? Świetnie trafiłeś! Przejdź nasz 5-minutowy quiz i odkryj uczelnię, która spełni Twoje oczekiwania.                </p>
                 <SchoolIcon className="h-40 w-40 p-8 min-w-max flex  justify-center rounded-xl border-2 border-black shadow-[0px_0px_20px_10px_#00000024] " />
               </div>
                
               <div className="flex items-center gap-4">
                 <GraduationCap className="h-40 w-40 p-8 min-w-max flex  justify-center rounded-xl border-2 border-black shadow-[0px_0px_20px_10px_#00000024] " />
-                <p>A może skończyłeś już studia i poszukujesz szkoły podyplomowej, bądź doktorskiej.
-                  Nic nie szkodzi, nasz quiz jest dla Ciebie! Przystąp do niego i dowiedz się która uczelnia będzie oferować oczekiwany przez Ciebie rodzaj i kierunek studiów.
-                </p>
+                <p>
+                Ukończyłeś już studia licencjackie lub magisterskie i teraz szukasz szkoły podyplomowej lub programu doktorskiego? Trafiłeś w dziesiątkę! Przystąp teraz i odkryj idealną uczelnię dla Ciebie.                </p>
               </div>
                 <div className="flex items-center gap-4">
                 <p>
-                  Jesteś rodzicem i trafiłeś na naszą stronę bo martwisz się o przyszłość swojego dziecka? 
-                  Nie ma się czym martwić, nasz quiz jest dla Ciebie! Przystąp do niego i dowiedz się która uczelnia będzie oferować oczekiwany przez Twoje dziecko rodzaj i kierunek studiów.
+                Jesteś rodzicem, który z troską myśli o przyszłości swojego dziecka i szuka odpowiedniej dla niego uczelni? Nasz quiz jest również dla Ciebie.  Przystąp teraz i dowiedz się, która uczelnia spełni oczekiwania Twojego dziecka.
                 </p>
                 <UsersIcon className="h-40 w-40 p-8 min-w-max flex  justify-center rounded-xl border-2 border-black shadow-[0px_0px_20px_10px_#00000024] " />
               </div>
