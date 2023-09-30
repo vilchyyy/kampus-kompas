@@ -20,6 +20,7 @@ import { Page15 } from "~/components/QuizPages/Page15";
 import { Page16 } from "~/components/QuizPages/Page16";
 import { Page17 } from "~/components/QuizPages/Page17";
 import { Page18 } from "~/components/QuizPages/Page18";
+import { FinalPage } from "~/components/QuizPages/FinalPage";
 
 export default function Step1() {
   const [page, setPage] = useState(0);
@@ -89,6 +90,7 @@ export default function Step1() {
           <AnimatePresence>
             {page === 18 && <Page18 nextPage={nextPage} />}
           </AnimatePresence>
+          <AnimatePresence>{page === 19 && <FinalPage />}</AnimatePresence>
         </div>
       </div>
     </div>
