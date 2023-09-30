@@ -8,7 +8,7 @@ type UserType =
   ;
 type StudiesType = "fullTime" | "partTime" | "online" | "evening" ;
 type RankingType = number;
-type CertType = number;
+type CertType = number; 
 type WorkType =
   | "workWithHumans"
   | "workWithData"
@@ -20,10 +20,9 @@ type WorkDestinationType =
   | "manual"
   | "freelancer"
   ;
-type StudentType = "theoretical" | "practical" | "notImportant" ;
+type StudentType = number;
 type ExchangeType = number;
 type InnowationType = number;
-type FieldWorkType = "field" | "office" ;
 type AreYouArtistType = number;
 type SoloOrTeamType = "solo" | "team" ;
 type SociallyInterestedType = number;
@@ -59,8 +58,6 @@ interface FormState {
   setExchangeType: (exchangeType: ExchangeType) => void;
   innowationType: InnowationType;
   setInnowationType: (innowationType: InnowationType) => void;
-  fieldWorkType: FieldWorkType;
-  setFieldWorkType: (fieldWorkType: FieldWorkType) => void;
   areYouArtistType: AreYouArtistType;
   setAreYouArtistType: (areYouArtistType: AreYouArtistType) => void;
   soloOrTeamType: SoloOrTeamType;
@@ -106,14 +103,12 @@ export const useFormStore = create<FormState>()((set) => ({
   setWorkType: (workType) => set({ workType }),
   workDestinationType: "office",
   setWorkDestinationType: (workDestinationType) => set({ workDestinationType }),
-  studentType: "theoretical",
+  studentType: 0,
   setStudentType: (studentType) => set({ studentType }),
   exchangeType: 0,
   setExchangeType: (exchangeType) => set({ exchangeType }),
   innowationType: 0,
   setInnowationType: (innowationType) => set({ innowationType }),
-  fieldWorkType: "field",
-  setFieldWorkType: (fieldWorkType) => set({ fieldWorkType }),
   areYouArtistType: 0,
   setAreYouArtistType: (areYouArtistType) => set({ areYouArtistType }),
   soloOrTeamType: "solo",

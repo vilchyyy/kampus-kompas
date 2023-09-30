@@ -35,17 +35,9 @@ export const AllTypes = z.object({
   , "manual"
   , "freelancer"
  ]),
-  studentType: z.enum([
-    "theoretical"
-  , "practical"
-  , "notImportant"
- ]),
+  studentType: z.number(),
   exchangeType: z.number(),
   innowationType: z.number(),
-  fieldWorkType: z.enum([
-    "field"
-  , "office"
- ]),
   areYouArtistType: z.number(),
   soloOrTeamType: z.enum([
     "solo"
