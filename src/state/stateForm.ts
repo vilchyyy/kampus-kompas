@@ -6,7 +6,7 @@ type UserType =
   | "collegeGraduate"
   | "abroadGraduate"; //page1
 type StudiesType = "fullTime" | "partTime" | "online"; //page2
-export type LocalizationKmType = "50" | "100" | "200" | "300" | "500"; //page3a
+export type LocalizationKmType = "50" | "100" | "200" | "300" | "500" | undefined; //page3a
 type RankingType = number; //page4
 type CertType = number; //page5
 type WorkType = "workWithHumans" | "workWithData" | "workWithNature"; //page6
@@ -75,7 +75,7 @@ export const useFormStore = create<FormState>()((set) => ({
   setUserType: (userType) => set({ userType }),
   studiesType: "fullTime",
   setStudiesType: (studiesType) => set({ studiesType }),
-  localizationKmType: "50",
+  localizationKmType: undefined,
   setLocalizationKmType: (localizationKmType) => set({ localizationKmType }),
   rankingType: 0,
   setRankingType: (rankingType) => set({ rankingType }),
