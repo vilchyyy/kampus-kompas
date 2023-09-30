@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown01Icon, ArrowDownIcon } from "lucide-react";
 import { IBM_Plex_Serif } from "next/font/google";
 import Head from "next/head";
 import Image from "next/image";
+import { any, string, z } from "zod";
 import Nav from "~/components/Nav";
+import { useFormStore } from "~/state/stateForm";
 import { api } from "~/utils/api";
+import type { AllTypes } from "~/server/api/routers/example";
 
 const ibm_serif = IBM_Plex_Serif({
   weight: '700',
@@ -12,8 +14,9 @@ const ibm_serif = IBM_Plex_Serif({
 }) 
 
 export default function Home() {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
-
+  const hello = api.example.hello.useQuery(
+    ( useFormStore.getState() as z.infer<typeof AllTypes> ) );
+  console.log(hello.data)
   return (
     <>
       <Head>
@@ -44,7 +47,7 @@ export default function Home() {
            <Image src="/spektrum.png" className=" border-2 border-black " width={500} height={500} alt="logo" />
 
           <p className="text-2xl">
-            {hello.data ? hello.data.greeting : "Loading tRPC query..."}
+            {/* {hello.data ? hello.data : "Loading tRPC query..."} */}
           </p>
         </div>
       </main>

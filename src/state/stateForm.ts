@@ -5,36 +5,36 @@ type UserType =
   | "schoolGraduate"
   | "collegeGraduate"
   | "abroadGraduate"
-  | undefined;
-type StudiesType = "fullTime" | "partTime" | "online" | "evening" | undefined;
-type RankingType = "important" | "notImportant" | undefined;
-type CertType = "yesTechnician" | "notImportant" | "noHumanities" | undefined;
+  ;
+type StudiesType = "fullTime" | "partTime" | "online" | "evening" ;
+type RankingType = "important" | "notImportant" ;
+type CertType = "yesTechnician" | "notImportant" | "noHumanities" ;
 type WorkType =
   | "workWithHumans"
   | "workWithData"
   | "workWithNature"
-  | undefined;
+  ;
 type WorkDestinationType =
   | "office"
   | "science"
   | "manual"
   | "freelancer"
-  | undefined;
-type StudentType = "theoretical" | "practical" | "notImportant" | undefined;
-type ExchangeType = "yes" | "notImportant" | undefined;
-type InnowationType = "yes" | "notImportant" | undefined;
-type FieldWorkType = "field" | "office" | undefined;
-type AreYouArtistType = "yes" | "no" | undefined;
-type SoloOrTeamType = "solo" | "team" | undefined;
-type SociallyInterestedType = "yes" | "no" | undefined;
-type TechLoveType = "yes" | "no" | undefined;
-type HistoryAndCultureType = "yes" | "no" | undefined;
-type EcologyType = "yes" | "no" | undefined;
-type MediaInterestType = "yes" | "no" | undefined;
-type TechnologyOrHumanityType = "technology" | "humanity" | undefined;
-type WorkForSocietyOrScianceType = "society" | "science" | undefined;
-type LocalizationType = "notImportant" | "important" | undefined;
-type LocalizationKmType = 50 | 100 | 200 | 300 | 500 | undefined;
+  ;
+type StudentType = "theoretical" | "practical" | "notImportant" ;
+type ExchangeType = "yes" | "notImportant" ;
+type InnowationType = "yes" | "notImportant" ;
+type FieldWorkType = "field" | "office" ;
+type AreYouArtistType = "yes" | "no" ;
+type SoloOrTeamType = "solo" | "team" ;
+type SociallyInterestedType = "yes" | "no" ;
+type TechLoveType = "yes" | "no" ;
+type HistoryAndCultureType = "yes" | "no" ;
+type EcologyType = "yes" | "no" ;
+type MediaInterestType = "yes" | "no" ;
+type TechnologyOrHumanityType = "technology" | "humanity" ;
+type WorkForSocietyOrScianceType = "society" | "science" ;
+type LocalizationType = "notImportant" | "important" ;
+type LocalizationKmType = "50" | "100" | "200" | "300" | "500" ;
 
 interface FormState {
   userType: UserType;
@@ -90,50 +90,50 @@ interface FormState {
 }
 
 export const useFormStore = create<FormState>()((set) => ({
-  userType: undefined,
+  userType: "parent",
   setUserType: (userType) => set({ userType }),
-  studiesType: undefined,
+  studiesType:"fullTime",
   setStudiesType: (studiesType) => set({ studiesType }),
-  localizationType: undefined,
+  localizationType: "important",
   setLocalizationType: (localizationType) => set({ localizationType }),
-  localizationKmType: undefined,
+  localizationKmType: "50",
   setLocalizationKmType: (localizationKmType) => set({ localizationKmType }),
-  rankingType: undefined,
+  rankingType: "notImportant",
   setRankingType: (rankingType) => set({ rankingType }),
-  certType: undefined,
+  certType: "yesTechnician",
   setCertType: (certType) => set({ certType }),
-  workType: undefined,
+  workType: "workWithHumans",
   setWorkType: (workType) => set({ workType }),
-  workDestinationType: undefined,
+  workDestinationType: "office",
   setWorkDestinationType: (workDestinationType) => set({ workDestinationType }),
-  studentType: undefined,
+  studentType: "theoretical",
   setStudentType: (studentType) => set({ studentType }),
-  exchangeType: undefined,
+  exchangeType: "yes",
   setExchangeType: (exchangeType) => set({ exchangeType }),
-  innowationType: undefined,
+  innowationType: "yes",
   setInnowationType: (innowationType) => set({ innowationType }),
-  fieldWorkType: undefined,
+  fieldWorkType: "field",
   setFieldWorkType: (fieldWorkType) => set({ fieldWorkType }),
-  areYouArtistType: undefined,
+  areYouArtistType: "yes",
   setAreYouArtistType: (areYouArtistType) => set({ areYouArtistType }),
-  soloOrTeamType: undefined,
+  soloOrTeamType: "solo",
   setSoloOrTeamType: (soloOrTeamType) => set({ soloOrTeamType }),
-  sociallyInterestedType: undefined,
+  sociallyInterestedType: "yes",
   setSociallyInterestedType: (sociallyInterestedType) =>
     set({ sociallyInterestedType }),
-  techLoveType: undefined,
+  techLoveType: "yes",
   setTechLoveType: (techLoveType) => set({ techLoveType }),
-  historyAndCultureType: undefined,
+  historyAndCultureType: "yes",
   setHistoryAndCultureType: (historyAndCultureType) =>
     set({ historyAndCultureType }),
-  ecologyType: undefined,
+  ecologyType: "yes",
   setEcologyType: (ecologyType) => set({ ecologyType }),
-  mediaInterestType: undefined,
+  mediaInterestType: "yes",
   setMediaInterestType: (mediaInterestType) => set({ mediaInterestType }),
-  technologyOrHumanityType: undefined,
+  technologyOrHumanityType: "technology",
   setTechnologyOrHumanityType: (technologyOrHumanityType) =>
     set({ technologyOrHumanityType }),
-  workForSocietyOrScianceType: undefined,
+  workForSocietyOrScianceType: "society",
   setWorkForSocietyOrScianceType: (workForSocietyOrScianceType) =>
     set({ workForSocietyOrScianceType }),
 }));
