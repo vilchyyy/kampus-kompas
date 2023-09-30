@@ -16,7 +16,7 @@ const ibm_serif = IBM_Plex_Serif({
 
 export default function Home() {
   const hello = api.example.hello.useQuery(
-    ( useFormStore.getState() as z.infer<typeof AllTypes> ) );
+    ( useFormStore.getState()  ) );
   console.log(hello.data)
   return (
     <>
@@ -55,9 +55,7 @@ export default function Home() {
             </Button>
           </div>
           <div className="flex flex-wrap lg:gap-32 gap-12 lg:items-center justify-center  w-full">
-            <div className="flex justify-center rounded-xl border-2 border-black p-2   shadow-[0px_0px_20px_10px_#00000024]  ">
-              <Image src="/kurwy_z_roxy.svg" width={500}  height={500} alt="logo" />
-            </div>
+              <Image className="rounded-2xl border shadow-[0px_0px_20px_10px_#00000024]" src="/spektrum.svg" width={500}  height={500} alt="logo" />
             <div className="flex h-full gap-8 flex-col max-w-lg">
               <div className="flex items-center gap-4">
                 <p>Jesteś maturzystą i poszukujesz idealnej uczelni w której zdobędziesz kompetencje i poszerzysz swoje grono przyjaciół?
