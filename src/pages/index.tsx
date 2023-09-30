@@ -1,13 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown01Icon, ArrowDownIcon, GraduationCap, SchoolIcon, Users, UsersIcon } from "lucide-react";
+import { GraduationCap, SchoolIcon, UsersIcon } from "lucide-react";
 import { IBM_Plex_Serif } from "next/font/google";
 import Head from "next/head";
 import Image from "next/image";
-import { any, string, z } from "zod";
+import { z } from "zod";
 import Nav from "~/components/Nav";
 import { useFormStore } from "~/state/stateForm";
 import { api } from "~/utils/api";
 import type { AllTypes } from "~/server/api/routers/example";
+import Link from 'next/link'
 
 const ibm_serif = IBM_Plex_Serif({
   weight: "700",
@@ -49,10 +50,11 @@ export default function Home() {
                 proste
               </span>
             </p>
-
-            <Button className="p-6 px-10">
-              <p className="text-lg">Rozpocznij quiz</p>
-            </Button>
+            <Link href="/quiz">
+              <Button className="p-6 px-10">
+                <p className="text-lg">Rozpocznij quiz</p>
+              </Button>
+            </Link>
           </div>
           <div className="flex flex-wrap lg:gap-32 gap-12 lg:items-center justify-center  w-full">
             <div className="flex justify-center rounded-xl border-2 border-black p-2   shadow-[0px_0px_20px_10px_#00000024]  ">
