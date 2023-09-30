@@ -10,7 +10,7 @@ import { api } from "~/utils/api";
 import type { AllTypes } from "~/server/api/routers/example";
 import Link from 'next/link'
 
-const ibm_serif = IBM_Plex_Serif({
+export const ibm_serif = IBM_Plex_Serif({
   weight: "700",
   subsets: ["latin"],
 });
