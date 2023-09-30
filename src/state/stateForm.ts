@@ -6,7 +6,7 @@ type UserType =
   | "collegeGraduate"
   | "abroadGraduate"
   ;
-type StudiesType = "fullTime" | "partTime" | "online" | "evening" ;
+type StudiesType = "fullTime" | "partTime" | "online";
 type RankingType = number;
 type CertType = number; 
 type WorkType =

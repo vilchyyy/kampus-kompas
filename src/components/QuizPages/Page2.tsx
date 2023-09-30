@@ -44,16 +44,6 @@ export const Page2 = ({ nextPage }: Props) => {
       >
         Studia online
       </MotionButton>
-      <MotionButton
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={() => {
-          setStudiesType("evening");
-          nextPage();
-        }}
-      >
-        Studia wieczorowe
-      </MotionButton>
     </motion.div>
   );
 };

@@ -1,5 +1,5 @@
 import { useFormStore } from "~/state/stateForm";
-import { MotionButton } from "../MotionButton";
+import { MotionButton } from "../MotionCompoenents";
 import { motion } from "framer-motion";
 
 interface Props {
