@@ -1,6 +1,7 @@
 import { useFormStore } from "~/state/stateForm";
 import { MotionButton } from "../MotionCompoenents";
 import { motion } from "framer-motion";
+import { ibm_serif } from "~/pages";
 
 interface Props {
   nextPage(arg0?: number): void;
@@ -9,32 +10,74 @@ export const Page17 = ({ nextPage }: Props) => {
   const { setTechnologyOrHumanityType } = useFormStore();
   return (
     <motion.div
-      className="flex gap-2"
       initial={{ opacity: 0, display: "none" }}
       animate={{ opacity: 1, display: "flex", transition: { delay: 0.5 } }}
       exit={{ opacity: 0 }}
+      className="flex flex-col items-center gap-5"
     >
-    <MotionButton
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={() => {
-            setTechnologyOrHumanityType("technology");
-          nextPage();
-        }}
+      <motion.h2
+        className={`${ibm_serif.className} font scroll-m-20 border-b pb-2 text-center text-3xl font-semibold tracking-tight transition-colors first:mt-0`}
       >
-        Technologiczną
-      </MotionButton>
+        Jestem zainteresowany matematyką, technologią, zarządzeniem danymi.
+      </motion.h2>
+      <motion.div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row">
       <MotionButton
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.9 }}
-        onClick={() => {
-            setTechnologyOrHumanityType("humanity");
-          nextPage();
-        }}
+          className="w-52 md:w-36 lg:w-44"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => {
+            setTechnologyOrHumanityType(0);
+            nextPage();
+          }}
+        >
+          Bardzo się nie zgadzam
+        </MotionButton>
+        <MotionButton
+          className=" w-52 md:w-36 lg:w-44"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => {
+            setTechnologyOrHumanityType(1);
+            nextPage();
+          }}
+        >
+          Nie zgadzam się
+        </MotionButton>
+        <MotionButton
+          className="w-52 md:w-36 lg:w-44"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => {
+            setTechnologyOrHumanityType(2);
+            nextPage();
+          }}
+        >
+          Bez zdania
+        </MotionButton>
 
-      >
-        Humanistyczną
-      </MotionButton>
+        <MotionButton
+          className="w-52 md:w-36 lg:w-44"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => {
+            setTechnologyOrHumanityType(3);
+            nextPage();
+          }}
+        >
+          Zgadzam się
+        </MotionButton>
+        <MotionButton
+          className="w-52 md:w-36 lg:w-44"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => {
+            setTechnologyOrHumanityType(4);
+            nextPage();
+          }}
+        >
+          Bardzo się zgadzam
+        </MotionButton>
+      </motion.div>
     </motion.div>
   );
 };

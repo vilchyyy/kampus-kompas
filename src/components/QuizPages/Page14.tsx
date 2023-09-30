@@ -6,8 +6,8 @@ import { ibm_serif } from "~/pages";
 interface Props {
   nextPage(arg0?: number): void;
 }
-export const Page18 = ({ nextPage }: Props) => {
-  const { setWorkForSocietyOrScianceType } = useFormStore();
+export const Page14 = ({ nextPage }: Props) => {
+  const { setHistoryAndCultureType } = useFormStore();
   return (
     <motion.div
       initial={{ opacity: 0, display: "none" }}
@@ -18,15 +18,15 @@ export const Page18 = ({ nextPage }: Props) => {
       <motion.h2
         className={`${ibm_serif.className} font scroll-m-20 border-b pb-2 text-center text-3xl font-semibold tracking-tight transition-colors first:mt-0`}
       >
-        Preferuję pracę, która wymaga wysiłku naukowego i intelektualnego, oraz przeprowadzania badań.
+        Pasjonuję mnie historia oraz kultura.
       </motion.h2>
       <motion.div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row">
-      <MotionButton
+        <MotionButton
           className="w-52 md:w-36 lg:w-44"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setWorkForSocietyOrScianceType(0);
+            setHistoryAndCultureType(0);
             nextPage();
           }}
         >
@@ -37,7 +37,7 @@ export const Page18 = ({ nextPage }: Props) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setWorkForSocietyOrScianceType(1);
+            setHistoryAndCultureType(1);
             nextPage();
           }}
         >
@@ -48,7 +48,7 @@ export const Page18 = ({ nextPage }: Props) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setWorkForSocietyOrScianceType(2);
+            setHistoryAndCultureType(2);
             nextPage();
           }}
         >
@@ -60,7 +60,7 @@ export const Page18 = ({ nextPage }: Props) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setWorkForSocietyOrScianceType(3);
+            setHistoryAndCultureType(3);
             nextPage();
           }}
         >
@@ -71,7 +71,7 @@ export const Page18 = ({ nextPage }: Props) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setWorkForSocietyOrScianceType(4);
+            setHistoryAndCultureType(4);
             nextPage();
           }}
         >

@@ -20,8 +20,8 @@ type TechLoveType = number; //page13
 type HistoryAndCultureType = number; //page14
 type EcologyType = number; //page15
 type MediaInterestType = number; //page16
-type TechnologyOrHumanityType = "technology" | "humanity"; //page17
-type WorkForSocietyOrScianceType = "society" | "science"; //page18
+type TechnologyOrHumanityType = number; //page17
+type WorkForSocietyOrScianceType = number; //page18
 
 interface FormState {
   userType: UserType;
@@ -105,10 +105,10 @@ export const useFormStore = create<FormState>()((set) => ({
   setEcologyType: (ecologyType) => set({ ecologyType }),
   mediaInterestType: 0,
   setMediaInterestType: (mediaInterestType) => set({ mediaInterestType }),
-  technologyOrHumanityType: "technology",
+  technologyOrHumanityType: 0,
   setTechnologyOrHumanityType: (technologyOrHumanityType) =>
     set({ technologyOrHumanityType }),
-  workForSocietyOrScianceType: "society",
+  workForSocietyOrScianceType: 0,
   setWorkForSocietyOrScianceType: (workForSocietyOrScianceType) =>
     set({ workForSocietyOrScianceType }),
 }));

@@ -23,8 +23,8 @@ export const AllTypes = z.object({
   historyAndCultureType: z.number(),
   ecologyType: z.number(),
   mediaInterestType: z.number(),
-  technologyOrHumanityType: z.enum(["technology", "humanity"]),
-  workForSocietyOrScianceType: z.enum(["society", "science"]),
+  technologyOrHumanityType: z.number(),
+  workForSocietyOrScianceType: z.number(),
 });
 
 export const exampleRouter = createTRPCRouter({
