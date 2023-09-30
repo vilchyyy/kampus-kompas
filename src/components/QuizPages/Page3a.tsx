@@ -23,9 +23,9 @@ export const Page3a = ({ nextPage }: Props) => {
       >
         Jak daleko może znajdować się uczelnia?
       </motion.h2>
-      <motion.div className="flex w-full flex-col items-center justify-center gap-10">
+      <motion.div className="flex w-full flex-col items-center justify-center gap-16 p-4">
         <Slider
-          className="m-2 w-80"
+          className="w-80"
           min={50}
           max={500}
           defaultValue={50}
@@ -51,11 +51,26 @@ export const Page3a = ({ nextPage }: Props) => {
             scale: 1.5,
           }}
           marks={{
-            50: "50 km",
-            100: "100 km",
-            200: "200 km",
-            300: "300 km",
-            500: "500 km",
+            50: {
+              style: { wordBreak: "break-all", width: "26px" },
+              label: "50 km",
+            },
+            100: {
+              style: { wordBreak: "break-all", width: "26px" },
+              label: "100 km",
+            },
+            200: {
+              style: { wordBreak: "break-all", width: "26px" },
+              label: "200 km",
+            },
+            300: {
+              style: { wordBreak: "break-all", width: "26px" },
+              label: "300 km",
+            },
+            500: {
+              style: { wordBreak: "break-all", width: "26px" },
+              label: "500 km",
+            },
           }}
           step={null}
           onChange={(value) => {
