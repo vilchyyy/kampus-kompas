@@ -6,12 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 
-interface NavProps {
-  className?: string;
-  logoFont?: string;
-}
-
-export default function Nav({ className, logoFont }: NavProps) {
+export default function Nav() {
   const router = useRouter();
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
