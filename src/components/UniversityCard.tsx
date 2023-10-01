@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 export const UniversityCard = ({ university }: { university: University }) => {
-  console.log(university);
+  // console.log(university);
 
   return (
     <Card className="h-80 w-96 flex-grow border-2" key={university.id}>
