@@ -35,6 +35,6 @@ export default function Uczelnie() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
