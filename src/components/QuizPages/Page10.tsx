@@ -33,7 +33,7 @@ export const Page10 = ({ nextPage }: Props) => {
             nextPage();
           }}
         >
-          {t("Analiza i rozwiązywanie problemów")}
+          {t("Rozwiązywanie problemów")}
         </MotionButton>
         <MotionButton
           className=" w-52 md:w-36 lg:w-44"
