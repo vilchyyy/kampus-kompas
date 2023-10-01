@@ -8,8 +8,8 @@ import Nav from "~/components/Nav";
 import { useFormStore } from "~/state/stateForm";
 import { api } from "~/utils/api";
 import type { AllTypes } from "~/server/api/routers/example";
-import Link from 'next/link'
-import { useTranslation } from "react-i18next"
+import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export const ibm_serif = IBM_Plex_Serif({
   weight: "700",
@@ -17,10 +17,11 @@ export const ibm_serif = IBM_Plex_Serif({
 });
 
 export default function Home() {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
   const hello = api.example.hello.useQuery(
-    ( useFormStore.getState() as z.infer<typeof AllTypes> ) );
-  console.log(hello.data)
+    useFormStore.getState() as z.infer<typeof AllTypes>,
+  );
+  console.log(hello.data);
   return (
     <>
       <Head>
@@ -29,25 +30,29 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-between">
-        <Nav/>
+        <Nav />
         <div className="container flex h-screen flex-col items-center gap-6 px-4 py-10 sm:max-w-7xl sm:items-start ">
           <h1
             className={
               ibm_serif.className + " text-3xl text-slate-800 sm:text-5xl"
             }
-          >{t("Twój asystent w wyborze ścieżki życia")}
+          >
+            {t("Twój asystent w wyborze ścieżki życia")}
           </h1>
           <p className=" sm:text-lg">
-            {t("Odpowiedz na nasz quiz i znajdź idealną uczelnię w zaledwie 5 minut! Nasz zaawansowany algorytm dopasuje uczelnie do Twoich indywidualnych preferencji i przedstawi je na wykresie, który uwzględnia elastyczność oraz techniczność oferowanych programów studiów. Na wykresie oś pionowa to elastyczność studiów, od tradycyjnych do online, a oś pozioma to techniczność studiów, od tradycyjnych do politechnik.")}
+            {t(
+              "Odpowiedz na nasz quiz i znajdź idealną uczelnię w zaledwie 5 minut! Nasz zaawansowany algorytm dopasuje uczelnie do Twoich indywidualnych preferencji i przedstawi je na wykresie, który uwzględnia elastyczność oraz techniczność oferowanych programów studiów. Na wykresie oś pionowa to elastyczność studiów, od tradycyjnych do online, a oś pozioma to techniczność studiów, od tradycyjnych do politechnik.",
+            )}
           </p>
 
-          <div className="flex pb-8 w-full items-center justify-around sm:justify-start sm:gap-6 ">
+          <div className="flex w-full items-center justify-around pb-8 sm:justify-start sm:gap-6 ">
             {/* <ArrowDownIcon className="w-10 h-10" /> */}
             <p className="text-lg">
               {t("Zobacz jakie to ")}
               <span className="font-bold underline underline-offset-4">
-              {t("proste")}
-              </span>{t(" ")}
+                {t("proste")}
+              </span>
+              {t(" ")}
             </p>
             <Link href="/quiz">
               <Button className="p-6 px-10">
@@ -55,27 +60,44 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-          <div className="flex flex-wrap lg:gap-32 gap-12 lg:items-center justify-center  w-full">
-              <Image className="rounded-2xl border shadow-[0px_0px_20px_10px_#00000024]" src="/spektrum.svg" width={500}  height={500} alt="logo" />
-            <div className="flex h-full gap-8 flex-col max-w-lg">
+          <div className="flex w-full flex-wrap justify-center gap-12 pb-8 lg:items-center lg:gap-32">
+            <Image
+              className="rounded-2xl border shadow-[0px_0px_20px_10px_#00000024]"
+              src="/spektrum.svg"
+              width={500}
+              height={500}
+              alt="logo"
+            />
+            <div className="flex max-w-lg flex-col gap-8">
               <div className="flex items-center gap-4">
-                <p>{t("Jesteś na końcu liceum i chcesz znaleźć idealną uczelnię, która nie tylko pomoże Ci zdobyć kompetencje, ale także rozwinie Twój krąg przyjaciół? Świetnie trafiłeś! Przejdź nasz 5-minutowy quiz i odkryj uczelnię, która spełni Twoje oczekiwania.")}</p>
-                <SchoolIcon className="h-40 w-40 p-8 min-w-max flex  justify-center rounded-xl border-2 border-black shadow-[0px_0px_20px_10px_#00000024] " />
+                <p>
+                  {t(
+                    "Jesteś na końcu liceum i chcesz znaleźć idealną uczelnię, która nie tylko pomoże Ci zdobyć kompetencje, ale także rozwinie Twój krąg przyjaciół? Świetnie trafiłeś! Przejdź nasz 5-minutowy quiz i odkryj uczelnię, która spełni Twoje oczekiwania.",
+                  )}
+                </p>
+                <SchoolIcon className="flex h-40 w-40 min-w-max justify-center  rounded-xl border-2 border-black p-8 shadow-[0px_0px_20px_10px_#00000024] " />
               </div>
-               
+
               <div className="flex items-center gap-4">
-                <GraduationCap className="h-40 w-40 p-8 min-w-max flex  justify-center rounded-xl border-2 border-black shadow-[0px_0px_20px_10px_#00000024] " />
-                <p>{t("Ukończyłeś już studia licencjackie lub magisterskie i teraz szukasz szkoły podyplomowej lub programu doktorskiego? Trafiłeś w dziesiątkę! Przystąp teraz i odkryj idealną uczelnię dla Ciebie.")}</p>
+                <GraduationCap className="flex h-40 w-40 min-w-max justify-center  rounded-xl border-2 border-black p-8 shadow-[0px_0px_20px_10px_#00000024] " />
+                <p>
+                  {t(
+                    "Ukończyłeś już studia licencjackie lub magisterskie i teraz szukasz szkoły podyplomowej lub programu doktorskiego? Trafiłeś w dziesiątkę! Przystąp teraz i odkryj idealną uczelnię dla Ciebie.",
+                  )}
+                </p>
               </div>
-                <div className="flex items-center gap-4">
-                <p>{t("Jesteś rodzicem, który z troską myśli o przyszłości swojego dziecka i szuka odpowiedniej dla niego uczelni? Nasz quiz jest również dla Ciebie. Przystąp teraz i dowiedz się, która uczelnia spełni oczekiwania Twojego dziecka.")}</p>
-                <UsersIcon className="h-40 w-40 p-8 min-w-max flex  justify-center rounded-xl border-2 border-black shadow-[0px_0px_20px_10px_#00000024] " />
+              <div className="flex items-center gap-4">
+                <p>
+                  {t(
+                    "Jesteś rodzicem, który z troską myśli o przyszłości swojego dziecka i szuka odpowiedniej dla niego uczelni? Nasz quiz jest również dla Ciebie. Przystąp teraz i dowiedz się, która uczelnia spełni oczekiwania Twojego dziecka.",
+                  )}
+                </p>
+                <UsersIcon className="flex h-40 w-40 min-w-max justify-center  rounded-xl border-2 border-black p-8 shadow-[0px_0px_20px_10px_#00000024] " />
               </div>
             </div>
           </div>
 
-          <p className="text-2xl">
-          </p>
+          <p className="text-2xl"></p>
         </div>
       </main>
     </>
