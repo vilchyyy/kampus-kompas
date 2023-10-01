@@ -16,6 +16,17 @@ model example {
   @@index([name], map: "Example_name_idx")
 }
 
+    image     String?
+    updatedAt DateTime   @updatedAt
+    kierunki  Kierunek[]
+    createdAt DateTime   @default(now())
+    y         Float
+    x         Float
+    publiczny Boolean
+    ranking   Float
+    name      String
+    id        Int        @id @default(autoincrement())
+model University {
 model kierunek {
   id            Int           @id @default(autoincrement())
   name          String

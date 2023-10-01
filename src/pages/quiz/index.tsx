@@ -1,4 +1,4 @@
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Nav from "~/components/Nav";
 import { Page1 } from "~/components/QuizPages/Page1";
@@ -21,6 +21,7 @@ import { Page16 } from "~/components/QuizPages/Page16";
 import { Page17 } from "~/components/QuizPages/Page17";
 import { Page18 } from "~/components/QuizPages/Page18";
 import { FinalPage } from "~/components/QuizPages/FinalPage";
+import { ProgressDot } from "~/components/ProgressDot";
 
 export default function Step1() {
   const [page, setPage] = useState(0);
@@ -91,6 +92,24 @@ export default function Step1() {
             {page === 18 && <Page18 nextPage={nextPage} />}
           </AnimatePresence>
           <AnimatePresence>{page === 19 && <FinalPage />}</AnimatePresence>
+          <AnimatePresence>
+            {page < 19 && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed bottom-8 left-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-1"
+              >
+                {(() => {
+                  const dots = [];
+                  for (let i = 0; i <= 18; i++) {
+                    dots.push(<ProgressDot page={page} index={i} />);
+                  }
+                  return dots;
+                })()}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
     </div>
