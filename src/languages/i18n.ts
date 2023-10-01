@@ -7,7 +7,7 @@ import polish from './polish.json';
 i18n
     .use(initReactI18next)
     .init({
-        lng: "ukr", 
+        lng: "pl", 
         interpolation: {
             escapeValue: false // react already safes from xss
         },
