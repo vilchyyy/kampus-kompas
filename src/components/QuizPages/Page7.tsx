@@ -2,12 +2,15 @@ import { useFormStore } from "~/state/stateForm";
 import { MotionButton } from "../MotionCompoenents";
 import { motion } from "framer-motion";
 import { ibm_serif } from "~/pages";
+import { useTranslation } from "react-i18next"
 
 interface Props {
   nextPage(arg0?: number): void;
 }
 export const Page7 = ({ nextPage }: Props) => {
   const { setWorkDestinationType } = useFormStore();
+  const { t } = useTranslation()
+
   return (
     <motion.div
       initial={{ opacity: 0, display: "none" }}
@@ -18,8 +21,7 @@ export const Page7 = ({ nextPage }: Props) => {
       <motion.h2
         className={`${ibm_serif.className} font scroll-m-20 border-b pb-2 text-center text-3xl font-semibold tracking-tight transition-colors first:mt-0`}
       >
-        Czy preferujesz kierunki studiów prowadzące do pracy biurowej, fizyczna,
-        naukowej, czy może bardziej jako freelancer?
+        {t("Czy preferujesz kierunki studiów prowadzące do pracy biurowej, fizyczna, naukowej, czy może bardziej jako freelancer?")}
       </motion.h2>
       <motion.div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row">
         <MotionButton
@@ -30,7 +32,7 @@ export const Page7 = ({ nextPage }: Props) => {
             nextPage();
           }}
         >
-          Praca biurowa
+          {t("Praca biurowa")}
         </MotionButton>
         <MotionButton
           whileHover={{ scale: 1.05 }}
@@ -40,7 +42,7 @@ export const Page7 = ({ nextPage }: Props) => {
             nextPage();
           }}
         >
-          Praca naukowa
+          {t("Praca naukowa")}
         </MotionButton>
         <MotionButton
           whileHover={{ scale: 1.05 }}
@@ -50,7 +52,7 @@ export const Page7 = ({ nextPage }: Props) => {
             nextPage();
           }}
         >
-          Praca fizyczna
+          {t("Praca fizyczna")}
         </MotionButton>
         <MotionButton
           whileHover={{ scale: 1.05 }}
@@ -60,7 +62,7 @@ export const Page7 = ({ nextPage }: Props) => {
             nextPage();
           }}
         >
-          Freelancerka
+          {t("Freelancerka")}
         </MotionButton>
       </motion.div>
     </motion.div>

@@ -2,12 +2,15 @@ import { motion } from "framer-motion";
 import { useFormStore } from "~/state/stateForm";
 import { MotionButton } from "../MotionCompoenents";
 import { ibm_serif } from "~/pages";
+import { useTranslation } from "react-i18next"
 
 interface Props {
   nextPage(): void;
 }
 export const Page2 = ({ nextPage }: Props) => {
   const { setStudiesType } = useFormStore();
+  const { t } = useTranslation()
+
   return (
     <motion.div
       initial={{ opacity: 0, display: "none" }}
@@ -18,7 +21,7 @@ export const Page2 = ({ nextPage }: Props) => {
       <motion.h2
         className={`${ibm_serif.className} font scroll-m-20 border-b pb-2 text-center text-3xl font-semibold tracking-tight transition-colors first:mt-0`}
       >
-        Jakim rodzajem studiów jesteś zainteresowany?
+        {t("Jakiego rodzaju studiami jesteś zainteresowany?")}
       </motion.h2>
       <motion.div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row">
         <MotionButton
@@ -30,7 +33,7 @@ export const Page2 = ({ nextPage }: Props) => {
           }}
           className="w-60"
         >
-          Studia dzienne
+          {t("Studia dzienne")}
         </MotionButton>
         <MotionButton
           whileHover={{ scale: 1.05 }}
@@ -41,7 +44,7 @@ export const Page2 = ({ nextPage }: Props) => {
           }}
           className="w-60"
         >
-          Studia zaoczne
+          {t("Studia zaoczne")}
         </MotionButton>
         <MotionButton
           whileHover={{ scale: 1.05 }}
@@ -52,7 +55,7 @@ export const Page2 = ({ nextPage }: Props) => {
           }}
           className="w-60"
         >
-          Studia online
+          {t("Studia online")}
         </MotionButton>
       </motion.div>
     </motion.div>
