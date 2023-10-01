@@ -19,7 +19,7 @@ model example {
 model Kierunek {
   id            Int           @id @default(autoincrement())
   name          String
-  tryb          kierunek_tryb
+  tryb          tryb
   techniczne    Int
   spoleczne     Int
   humanistyczne Int
@@ -53,7 +53,7 @@ model University {
   @@index([name], map: "University_name_idx")
 }
 
-enum kierunek_tryb {
+enum tryb {
   stacjonarne
   niestacjonarne
   online
