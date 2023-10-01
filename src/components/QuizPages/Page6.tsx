@@ -2,12 +2,15 @@ import { useFormStore } from "~/state/stateForm";
 import { MotionButton } from "../MotionCompoenents";
 import { motion } from "framer-motion";
 import { ibm_serif } from "~/pages";
+import { useTranslation } from "react-i18next"
 
 interface Props {
   nextPage(arg0?: number): void;
 }
 export const Page6 = ({ nextPage }: Props) => {
   const { setWorkType } = useFormStore();
+  const { t } = useTranslation()
+
   return (
     <motion.div
       initial={{ opacity: 0, display: "none" }}
@@ -18,8 +21,7 @@ export const Page6 = ({ nextPage }: Props) => {
       <motion.h2
         className={`${ibm_serif.className} font scroll-m-20 border-b pb-2 text-center text-3xl font-semibold tracking-tight transition-colors first:mt-0`}
       >
-        Czy preferujesz pracę z ludźmi, pracę z danymi, czy może prace z
-        przyrodą?
+        {t("Preferujesz pracę z ludźmi, pracę z danymi, czy może prace z przyrodą?")}
       </motion.h2>
       <motion.div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row">
         <MotionButton
@@ -30,7 +32,7 @@ export const Page6 = ({ nextPage }: Props) => {
             nextPage();
           }}
         >
-          Praca z ludźmi
+          {t("Praca z ludźmi")}
         </MotionButton>
         <MotionButton
           whileHover={{ scale: 1.05 }}
@@ -40,7 +42,7 @@ export const Page6 = ({ nextPage }: Props) => {
             nextPage();
           }}
         >
-          Praca z danymi
+          {t("Praca z danymi")}
         </MotionButton>
         <MotionButton
           whileHover={{ scale: 1.05 }}
@@ -50,7 +52,7 @@ export const Page6 = ({ nextPage }: Props) => {
             nextPage();
           }}
         >
-          Praca z naturą
+          {t("Praca z naturą")}
         </MotionButton>
       </motion.div>
     </motion.div>

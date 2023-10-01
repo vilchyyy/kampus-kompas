@@ -13,7 +13,7 @@ type WorkType = "workWithHumans" | "workWithData" | "workWithNature"; //page6
 type WorkDestinationType = "office" | "science" | "manual" | "freelancer"; //page7
 type StudentType = number; //page8
 type ExchangeType = number; //page9
-type InnowationType = number; //page10
+type Skills = "dataAnalyze" | "communication" | "creativity" | "technologyUnderstanding"; //page 10
 type AreYouArtistType = number; //page11
 type SociallyInterestedType = number; //page12
 type TechLoveType = number; //page13
@@ -32,6 +32,8 @@ interface FormState {
   setLocalizationKmType: (localizationKmType: LocalizationKmType) => void;
   rankingType: RankingType;
   setRankingType: (rankingType: RankingType) => void;
+  skills:Skills;
+  setSkills: (skills: Skills) => void;
   certType: CertType;
   setCertType: (certType: CertType) => void;
   workType: WorkType;
@@ -42,8 +44,6 @@ interface FormState {
   setStudentType: (studentType: StudentType) => void;
   exchangeType: ExchangeType;
   setExchangeType: (exchangeType: ExchangeType) => void;
-  innowationType: InnowationType;
-  setInnowationType: (innowationType: InnowationType) => void;
   areYouArtistType: AreYouArtistType;
   setAreYouArtistType: (areYouArtistType: AreYouArtistType) => void;
   sociallyInterestedType: SociallyInterestedType;
@@ -77,6 +77,8 @@ export const useFormStore = create<FormState>()((set) => ({
   setStudiesType: (studiesType) => set({ studiesType }),
   localizationKmType: undefined,
   setLocalizationKmType: (localizationKmType) => set({ localizationKmType }),
+  skills: "dataAnalyze",
+  setSkills: (skills) => set({skills}),
   rankingType: 0,
   setRankingType: (rankingType) => set({ rankingType }),
   certType: 0,
@@ -89,8 +91,6 @@ export const useFormStore = create<FormState>()((set) => ({
   setStudentType: (studentType) => set({ studentType }),
   exchangeType: 0,
   setExchangeType: (exchangeType) => set({ exchangeType }),
-  innowationType: 0,
-  setInnowationType: (innowationType) => set({ innowationType }),
   areYouArtistType: 0,
   setAreYouArtistType: (areYouArtistType) => set({ areYouArtistType }),
   sociallyInterestedType: 0,
