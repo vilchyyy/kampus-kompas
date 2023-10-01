@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { SearchIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
 
@@ -42,8 +43,10 @@ export default function Nav({ className, logoFont }: NavProps) {
           >
             KampusKompas
           </p>
-          <p>FAQ</p>
-          <p className="min-w-min">About&nbsp;Us</p>
+          <Link href="/FAQ">
+            <p>FAQ</p>
+          </Link>
+          <p className="min-w-min">{t("About")}&nbsp;{t("Us")}</p>
         </div>
 
         <div className="flex w-full max-w-sm items-center gap-2 space-x-2">
