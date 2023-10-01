@@ -5,9 +5,11 @@ import { SearchIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function Nav() {
+  const [value, setValue] = useState("");
   const router = useRouter();
   const { t, i18n } = useTranslation();
   const lang = i18n.language;
@@ -41,7 +43,9 @@ export default function Nav() {
           <Link href="/FAQ">
             <p>FAQ</p>
           </Link>
-          <p className="min-w-min">{t("About")}&nbsp;{t("Us")}</p>
+          <p className="min-w-min">
+            {t("About")}&nbsp;{t("Us")}
+          </p>
         </div>
 
         <div className="flex w-full max-w-sm items-center gap-2 space-x-2">
@@ -81,9 +85,30 @@ export default function Nav() {
               }}
             />
           )}
-          <Input type="text" placeholder={t("wyszukaj uczelnie...")} />
+          <Input
+            type="text"
+            value={value}
+            placeholder={t("wyszukaj uczelnie...")}
+            onChange={(event) => {
+              setValue(event.currentTarget.value);
+            }}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                router
+                  .push(`/uczelnie?search=${event.currentTarget.value}`)
+                  .catch((err) => console.log(err));
+              }
+            }}
+          />
           <Button className="w-10 p-2" type="submit">
-            <SearchIcon className="h-10 w-10" />
+            <SearchIcon
+              className="h-10 w-10"
+              onClick={() => {
+                router
+                  .push(`/uczelnie?search=${value}`)
+                  .catch((err) => console.log(err));
+              }}
+            />
           </Button>
         </div>
       </div>

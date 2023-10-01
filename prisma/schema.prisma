@@ -16,18 +16,7 @@ model example {
   @@index([name], map: "Example_name_idx")
 }
 
-    image     String?
-    updatedAt DateTime   @updatedAt
-    kierunki  Kierunek[]
-    createdAt DateTime   @default(now())
-    y         Float
-    x         Float
-    publiczny Boolean
-    ranking   Float
-    name      String
-    id        Int        @id @default(autoincrement())
-model University {
-model kierunek {
+model Kierunek {
   id            Int           @id @default(autoincrement())
   name          String
   tryb          kierunek_tryb
@@ -42,13 +31,13 @@ model kierunek {
   createdAt     DateTime      @default(now())
   updatedAt     DateTime
   universityId  Int?
-  university    university?   @relation(fields: [universityId], references: [id], map: "Kierunek_universityId_fkey")
+  university    University?   @relation(fields: [universityId], references: [id], map: "Kierunek_universityId_fkey")
 
   @@index([name], map: "Kierunek_name_idx")
   @@index([universityId], map: "Kierunek_universityId_fkey")
 }
 
-model university {
+model University {
   id        Int        @id @default(autoincrement())
   name      String
   ranking   Float
@@ -57,8 +46,9 @@ model university {
   publiczny Boolean
   createdAt DateTime   @default(now())
   updatedAt DateTime
-  miasto    String
-  kierunek  kierunek[]
+  miasto    String?
+  kierunek  Kierunek[]
+  image     String?
 
   @@index([name], map: "University_name_idx")
 }
