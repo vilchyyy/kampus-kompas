@@ -1,11 +1,14 @@
 import { MotionButton } from "../MotionCompoenents";
 import { motion } from "framer-motion";
 import { ibm_serif } from "~/pages";
+import { useTranslation } from "react-i18next"
 
 interface Props {
   nextPage(arg0?: number): void;
 }
 export const Page3 = ({ nextPage }: Props) => {
+  const { t } = useTranslation()
+
   return (
     <motion.div
       initial={{ opacity: 0, display: "none" }}
@@ -16,7 +19,7 @@ export const Page3 = ({ nextPage }: Props) => {
       <motion.h2
         className={`${ibm_serif.className} font scroll-m-20 border-b pb-2 text-center text-3xl font-semibold tracking-tight transition-colors first:mt-0`}
       >
-        Czy ma dla ciebie znaczenie lokalizacja uczelni?
+        {t("Czy ma dla ciebie znaczenie lokalizacja uczelni?")}
       </motion.h2>
       <motion.div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row">
         <MotionButton
@@ -27,7 +30,7 @@ export const Page3 = ({ nextPage }: Props) => {
             nextPage(2);
           }}
         >
-          Nie
+          {t("Nie")}
         </MotionButton>
         <MotionButton
           className=" w-52 md:w-36 lg:w-44"
@@ -37,7 +40,7 @@ export const Page3 = ({ nextPage }: Props) => {
             nextPage();
           }}
         >
-          Tak
+          {t("Tak")}
         </MotionButton>
       </motion.div>
     </motion.div>

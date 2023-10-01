@@ -2,25 +2,28 @@ import { motion } from "framer-motion";
 import { useFormStore } from "~/state/stateForm";
 import { MotionButton } from "../MotionCompoenents";
 import { ibm_serif } from "~/pages";
+import { useTranslation } from "react-i18next"
 
 interface Props {
   nextPage(): void;
 }
 export const Page1 = ({ nextPage }: Props) => {
   const { setUserType } = useFormStore();
+  const { t } = useTranslation()
+
   return (
     <motion.div
-      initial={{ opacity: 0, display: "none" }}
-      animate={{ opacity: 1, display: "flex", transition: { delay: 0.5 } }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="flex flex-col items-center gap-5"
     >
       <motion.h2
         className={`${ibm_serif.className} font scroll-m-20 border-b pb-2 text-center text-3xl font-semibold tracking-tight transition-colors first:mt-0`}
       >
-        Kim jesteś?
+        {t("Kim jesteś?")}
       </motion.h2>
-      <motion.div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row">
+      <motion.div className="flex w-full flex-col items-center justify-center gap-4 lg:flex-row">
         <MotionButton
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
@@ -28,8 +31,9 @@ export const Page1 = ({ nextPage }: Props) => {
             setUserType("parent");
             nextPage();
           }}
+          className="w-80 lg:w-auto"
         >
-          Rodzicem
+          {t("Rodzicem")}
         </MotionButton>
         <MotionButton
           whileHover={{ scale: 1.05 }}
@@ -38,8 +42,9 @@ export const Page1 = ({ nextPage }: Props) => {
             setUserType("schoolGraduate");
             nextPage();
           }}
+          className="w-80 lg:w-auto"
         >
-          Absolwentem szkoły ponadpodstawowej
+          {t("Absolwentem szkoły ponadpodstawowej")}
         </MotionButton>
         <MotionButton
           whileHover={{ scale: 1.05 }}
@@ -48,8 +53,9 @@ export const Page1 = ({ nextPage }: Props) => {
             setUserType("collegeGraduate");
             nextPage();
           }}
+          className="w-80 lg:w-auto"
         >
-          Absolwentem studiów
+          {t("Absolwentem studiów")}
         </MotionButton>
         <MotionButton
           whileHover={{ scale: 1.05 }}
@@ -58,8 +64,9 @@ export const Page1 = ({ nextPage }: Props) => {
             setUserType("abroadGraduate");
             nextPage();
           }}
+          className="w-80 lg:w-auto"
         >
-          Absolwentem z zagranicy
+          {t("Absolwentem z zagranicy")}
         </MotionButton>
       </motion.div>
     </motion.div>

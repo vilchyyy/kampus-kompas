@@ -4,12 +4,14 @@ import Slider from "rc-slider";
 import { ibm_serif } from "~/pages";
 import "rc-slider/assets/index.css";
 import { type LocalizationKmType, useFormStore } from "~/state/stateForm";
+import { useTranslation } from "react-i18next"
 
 interface Props {
   nextPage(arg0?: number): void;
 }
 export const Page3a = ({ nextPage }: Props) => {
   const { setLocalizationKmType } = useFormStore();
+  const { t } = useTranslation()
 
   return (
     <motion.div
@@ -21,7 +23,7 @@ export const Page3a = ({ nextPage }: Props) => {
       <motion.h2
         className={`${ibm_serif.className} font scroll-m-20 border-b pb-2 text-center text-3xl font-semibold tracking-tight transition-colors first:mt-0`}
       >
-        Jak daleko może znajdować się uczelnia?
+        {t("Jak daleko może znajdować się uczelnia?")}
       </motion.h2>
       <motion.div className="flex w-full flex-col items-center justify-center gap-16 p-4">
         <Slider
@@ -87,7 +89,7 @@ export const Page3a = ({ nextPage }: Props) => {
             nextPage();
           }}
         >
-          Dalej
+          {t("Dalej")}
         </MotionButton>
       </motion.div>
     </motion.div>

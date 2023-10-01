@@ -2,12 +2,15 @@ import { useFormStore } from "~/state/stateForm";
 import { MotionButton } from "../MotionCompoenents";
 import { motion } from "framer-motion";
 import { ibm_serif } from "~/pages";
+import { useTranslation } from "react-i18next"
 
 interface Props {
   nextPage(arg0?: number): void;
 }
 export const Page10 = ({ nextPage }: Props) => {
-  const { setInnowationType } = useFormStore();
+  const { setSkills } = useFormStore();
+  const { t } = useTranslation()
+
   return (
     <motion.div
       initial={{ opacity: 0, display: "none" }}
@@ -18,7 +21,7 @@ export const Page10 = ({ nextPage }: Props) => {
       <motion.h2
         className={`${ibm_serif.className} font scroll-m-20 border-b pb-2 text-center text-3xl font-semibold tracking-tight transition-colors first:mt-0`}
       >
-        Chętnie biorę udział w innowacjach, przedsiębiorczości lub działalności społecznej.
+        {t("Jakie umiejętności uważasz za swoje największe atuty?")}
       </motion.h2>
       <motion.div className="flex w-full flex-col items-center justify-center gap-4 md:flex-row">
         <MotionButton
@@ -26,58 +29,47 @@ export const Page10 = ({ nextPage }: Props) => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setInnowationType(0);
+            setSkills("dataAnalyze");
             nextPage();
           }}
         >
-          Bardzo się nie zgadzam
+          {t("Rozwiązywanie problemów")}
         </MotionButton>
         <MotionButton
           className=" w-52 md:w-36 lg:w-44"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setInnowationType(1);
+            setSkills("communication");
             nextPage();
           }}
         >
-          Nie zgadzam się
+          {t("Empatia i komunikacja")}
         </MotionButton>
         <MotionButton
           className="w-52 md:w-36 lg:w-44"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setInnowationType(2);
+            setSkills("creativity");
             nextPage();
           }}
         >
-          Bez zdania
-        </MotionButton>
-
-        <MotionButton
-          className="w-52 md:w-36 lg:w-44"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => {
-            setInnowationType(3);
-            nextPage();
-          }}
-        >
-          Zgadzam się
+          {t("Kreatywność i innowacyjność")}
         </MotionButton>
         <MotionButton
           className="w-52 md:w-36 lg:w-44"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setInnowationType(4);
+            setSkills("technologyUnderstanding");
             nextPage();
           }}
         >
-          Bardzo się zgadzam
+          {t("Zrozumienie technologii")}
         </MotionButton>
       </motion.div>
     </motion.div>
   );
 };
+
