@@ -14,28 +14,48 @@ export const FinalPage = () => {
   );
   console.log(hello.data);
   return (
-    <div className="w-screen flex">
-      
-      <div className="flex max-w-7xl mx-auto w-full flex-col lg:flex-row gap-10 items-center justify-center mt-[500px] lg:mt-0 lg:justify-between">
+    <div className="flex w-screen">
+      <div className="mx-auto mt-[500px] flex w-full max-w-7xl flex-col items-center justify-center gap-10 lg:mt-0 lg:flex-row lg:justify-between">
         <div className="flex flex-col place-content-center">
-          <h1 className={`${ibm_serif.className} mb-6 mx-auto  text-2xl`}>Oto Idealne ścieżki studiów dla ciebie: </h1>
-        <ScrollArea className="flex max-h-[500px]  rounded-sm  flex-col">
-          <ul className="flex flex-col gap-4 p-10">
-            {hello.data?.filtered.map((el, index) => (
-                <MatchCard image={el.image ?? ""} name={el.uni?.name} kierunek={el.kierunek} tryb={el.tryb} key={index} />          
-            ))}
-          </ul>
-        </ScrollArea>
+          <h1 className={`${ibm_serif.className} mx-auto mb-6  text-2xl`}>
+            Oto posortowane ścieżki studiów specjalnie dla ciebie:{" "}
+          </h1>
+          <ScrollArea className="flex max-h-[500px]  flex-col  rounded-sm">
+            <ul className="flex flex-col gap-4 p-10">
+              {hello.data?.filtered.map((el, index) => (
+                <MatchCard
+                  image={el.image ?? ""}
+                  name={el.uni?.name}
+                  kierunek={el.kierunek}
+                  tryb={el.tryb}
+                  key={index}
+                />
+              ))}
+            </ul>
+          </ScrollArea>
         </div>
-      <div>
-      <h1 className={`${ibm_serif.className} mb-6  text-2xl`}>A oto twoje miejsce na naszym kompasie: </h1>
-        <Image className=" rounded-2xl h-min my-2 border shadow-[0px_0px_20px_10px_#00000024]" src="/spektrum.svg" width={500} height={500} alt="logo" />
-        <p className="w-[500px]">Nasz kompas na podstawie twoich odpowiedzi na pytania pokazuje twoje preferencje w wyborze studiów.
-            Umieszczony zostajesz na osiach elastyczności i techniczności studiów.
-        </p>
-      </div>
-    </div>
+        <div>
+          <h1 className={`${ibm_serif.className} mb-6  text-2xl`}>
+            A oto twoje miejsce na naszym kompasie:{" "}
+          </h1>
+          <div className="aspect-square relative">
+            {hello.data?.compass && <div style={{ bottom: `${(hello.data?.compass.y + 1)*50}%`, left: `${(hello.data.compass.x+1)*50}%` }} className={`w-4 h-4 rounded-full absolute bg-zinc-800`}></div>}
+            <Image
+              className="w-full h-full my-2 rounded-2xl border shadow-[0px_0px_20px_10px_#00000024]"
+              src="/spektrum.svg"
+              width={500}
+              height={500}
+              alt="logo"
+            />
+          </div>
 
+          <p className="w-[500px]">
+            Nasz kompas na podstawie twoich odpowiedzi na pytania pokazuje twoje
+            preferencje w wyborze studiów. Umieszczony zostajesz na osiach
+            elastyczności i techniczności studiów.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
