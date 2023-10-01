@@ -11,11 +11,11 @@ export default function FaqPage() {
   const { t } = useTranslation()
   console.log(t)
   return (
-    <>
+    <div className="h-full">
     <Nav />
     <Accordion type="single" collapsible className="mt-[-5.1rem] h-screen flex justify-center container flex-col items-center max-w-md text-center">
       <AccordionItem value="item-1" className="w-full">
-        <AccordionTrigger>{t("Czy ta strona jest bezpłatna?")}</AccordionTrigger>
+        <AccordionTrigger>{t("Czy strona internetowa kampus-kompas jest bezpłatna?")}</AccordionTrigger>
         <AccordionContent>
           {t("Tak, nasza strona jest całkowicie bezpłatna. Nie wymagamy żadnych opłat za korzystanie z naszych narzędzi i treści.")}
         </AccordionContent>
@@ -44,6 +44,6 @@ export default function FaqPage() {
           {t("Na naszej stronie oferujemy narzędzia do samooceny, w formie quizu, który pomoże Ci określić, jaka ścieżka może być najlepszy dla Ciebie.")}
         </AccordionContent>
       </AccordionItem>
-    </Accordion></>
+    </Accordion></div>
   );
 };
