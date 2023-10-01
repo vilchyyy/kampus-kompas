@@ -1,19 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import { ChevronRight } from "lucide-react";
 import { useState } from "react";
+import { Translation } from "react-i18next";
 import Nav from "~/components/Nav";
 import { UniversityCard } from "~/components/UniversityCard";
 import { api } from "~/utils/api";
 
+
 export default function Uczelnie() {
   const uczelnie = api.example.uczelnie.useQuery();
   const [order, setOrder] = useState("asc");
+  const [isOpen, setIsOpen] = useState(true);
+
   return (
     <div className="h-screen">
       <Nav />
-      <div className="mt-[-5.1rem] flex h-screen ">
-        <div className="mt-[5.1rem] w-1/5 max-w-xs border-r-2 p-2">
-          <p className="leading-7 [&:not(:first-child)]:mt-6">Sortuj po:</p>
+      <div className="mt-[-5.1rem] flex h-screen">
+        <div className={`mt-[5.1rem] w-1/5 max-w-xs ${!isOpen ? "border-none" : "border-r-2"} p-2 overflow-y-auto`}>
+        <ChevronRight className={`${isOpen && "rotate-180"} transition-transform`} size={26} strokeWidth={1} onClick={()=>setIsOpen(prevState => !prevState)}/>
+          <div className={`${isOpen ? "visible" : "hidden"}`}>
+            <p className="leading-7 [&:not(:first-child)]:mt-6">Sortuj po:</p>
           <div className="flex justify-between gap-2 py-2">
             <Button
               className="w-1/2"
@@ -168,8 +175,9 @@ export default function Uczelnie() {
             </div>
           </div>
         </div>
+        </div>
         <div className="mt-[5.1rem] w-4/5 flex-grow">
-          <div className="flex h-full flex-wrap justify-evenly gap-2 overflow-y-scroll p-2">
+          <div className="flex h-full flex-wrap justify-evenly gap-2 overflow-y-auto p-2">
             {uczelnie.data?.uczelnie.map((item) => (
               <UniversityCard
                 key={item.id}
