@@ -29,7 +29,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-between">
-        <Nav logoFont={ibm_serif.className} />
+        <Nav/>
         <div className="container flex h-screen flex-col items-center gap-6 px-4 py-10 sm:max-w-7xl sm:items-start ">
           <h1
             className={

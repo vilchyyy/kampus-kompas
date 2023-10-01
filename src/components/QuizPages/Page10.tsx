@@ -2,14 +2,14 @@ import { useFormStore } from "~/state/stateForm";
 import { MotionButton } from "../MotionCompoenents";
 import { motion } from "framer-motion";
 import { ibm_serif } from "~/pages";
-import { useTranslation } from "react-i18next"
+import { useTranslation } from "react-i18next";
 
 interface Props {
   nextPage(arg0?: number): void;
 }
 export const Page10 = ({ nextPage }: Props) => {
   const { setSkills } = useFormStore();
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   return (
     <motion.div
@@ -72,4 +72,3 @@ export const Page10 = ({ nextPage }: Props) => {
     </motion.div>
   );
 };
-

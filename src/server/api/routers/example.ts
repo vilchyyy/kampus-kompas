@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
 import { log } from "console";
-import { z } from "zod";
 import { number, z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
