@@ -64,36 +64,34 @@ export default function Step1() {
           <AnimatePresence>
             {page === 9 && <Page9 nextPage={nextPage} />}
           </AnimatePresence>
+
           <AnimatePresence>
-            {page === 10 && <Page10 nextPage={nextPage} />}
+            {page === 10 && <Page11 nextPage={nextPage} />}
           </AnimatePresence>
           <AnimatePresence>
-            {page === 11 && <Page11 nextPage={nextPage} />}
+            {page === 11 && <Page12 nextPage={nextPage} />}
           </AnimatePresence>
           <AnimatePresence>
-            {page === 12 && <Page12 nextPage={nextPage} />}
+            {page === 12 && <Page13 nextPage={nextPage} />}
           </AnimatePresence>
           <AnimatePresence>
-            {page === 13 && <Page13 nextPage={nextPage} />}
+            {page === 13 && <Page14 nextPage={nextPage} />}
           </AnimatePresence>
           <AnimatePresence>
-            {page === 14 && <Page14 nextPage={nextPage} />}
+            {page === 14 && <Page15 nextPage={nextPage} />}
           </AnimatePresence>
           <AnimatePresence>
-            {page === 15 && <Page15 nextPage={nextPage} />}
+            {page === 15 && <Page16 nextPage={nextPage} />}
           </AnimatePresence>
           <AnimatePresence>
-            {page === 16 && <Page16 nextPage={nextPage} />}
+            {page === 16 && <Page17 nextPage={nextPage} />}
           </AnimatePresence>
           <AnimatePresence>
-            {page === 17 && <Page17 nextPage={nextPage} />}
+            {page === 17 && <Page18 nextPage={nextPage} />}
           </AnimatePresence>
+          <AnimatePresence>{page === 18 && <FinalPage />}</AnimatePresence>
           <AnimatePresence>
-            {page === 18 && <Page18 nextPage={nextPage} />}
-          </AnimatePresence>
-          <AnimatePresence>{page === 19 && <FinalPage />}</AnimatePresence>
-          <AnimatePresence>
-            {page < 19 && (
+            {page < 18 && (
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -102,7 +100,7 @@ export default function Step1() {
               >
                 {(() => {
                   const dots = [];
-                  for (let i = 0; i <= 18; i++) {
+                  for (let i = 0; i <= 17; i++) {
                     dots.push(<ProgressDot page={page} index={i} />);
                   }
                   return dots;

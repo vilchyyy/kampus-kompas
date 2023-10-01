@@ -210,7 +210,7 @@ export const exampleRouter = createTRPCRouter({
 
     const kierunki = await ctx.db.kierunek.findMany({
       include: {
-        University: true
+        university: true
       }
     })
     const matches = []
@@ -262,7 +262,7 @@ export const exampleRouter = createTRPCRouter({
       const medyczne =   Math.abs((score.medyczne /ratio) - i.medyczne)
       const rolnicze = Math.abs((score.rolnicze /ratio) - i.rolnicze)
       const artystyczne = Math.abs((score.artystyczne /ratio) - i.artystyczne)
-      matches.push({score: human+tech+scisle+spoleczne+przyrodnicze+medyczne+rolnicze+artystyczne, uni: i.University ,tryb: i.tryb, kierunek: i.name, image: i.University?.image})
+      matches.push({score: human+tech+scisle+spoleczne+przyrodnicze+medyczne+rolnicze+artystyczne, uni: i.university ,tryb: i.tryb, kierunek: i.name, image: i.university?.image})
     }
 
     // loop through keys in score and if keys is number, divide by ratio
