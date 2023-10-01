@@ -1,60 +1,59 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
-    provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-    provider = "mysql"
-    url      = env("DATABASE_URL")
+  provider = "mysql"
+  url      = env("DATABASE_URL")
 }
 
-model Example {
-    id        Int      @id @default(autoincrement())
-    name      String
-    createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+model example {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime
 
-    @@index([name])
+  @@index([name], map: "Example_name_idx")
 }
 
-model University {
-    id        Int        @id @default(autoincrement())
-    name      String
-    ranking   Float
-    x         Float
-    y         Float
-    publiczny Boolean
-    kierunki  Kierunek[]
-    createdAt DateTime   @default(now())
-    updatedAt DateTime   @updatedAt
+model kierunek {
+  id            Int           @id @default(autoincrement())
+  name          String
+  tryb          kierunek_tryb
+  techniczne    Int
+  spoleczne     Int
+  humanistyczne Int
+  artystyczne   Int
+  sciscle       Int
+  przyrodnicze  Int
+  medyczne      Int
+  rolnicze      Int
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime
+  universityId  Int?
+  university    university?   @relation(fields: [universityId], references: [id], map: "Kierunek_universityId_fkey")
 
-    @@index([name])
+  @@index([name], map: "Kierunek_name_idx")
+  @@index([universityId], map: "Kierunek_universityId_fkey")
 }
 
-enum tryb {
-    stacjonarne
-    niestacjonarne
-    online
+model university {
+  id        Int        @id @default(autoincrement())
+  name      String
+  ranking   Float
+  x         Float
+  y         Float
+  publiczny Boolean
+  createdAt DateTime   @default(now())
+  updatedAt DateTime
+  miasto    String
+  kierunek  kierunek[]
+
+  @@index([name], map: "University_name_idx")
 }
 
-model Kierunek {
-    id           Int         @id @default(autoincrement())
-    name         String
-    tryb         tryb
-    techniczne Int
-    spoleczne  Int
-    humanistyczne Int
-    artystyczne Int
-    sciscle Int
-    przyrodnicze Int
-    medyczne Int
-    rolnicze Int
-    createdAt    DateTime    @default(now())
-    updatedAt    DateTime    @updatedAt
-    University   University? @relation(fields: [universityId], references: [id])
-    universityId Int?
-
-    @@index([name])
+enum kierunek_tryb {
+  stacjonarne
+  niestacjonarne
+  online
 }

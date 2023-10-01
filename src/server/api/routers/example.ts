@@ -1,3 +1,5 @@
+import { PrismaClient } from "@prisma/client";
+import { log } from "console";
 import { z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
@@ -9,7 +11,9 @@ export const AllTypes = z.object({
     "abroadGraduate",
   ]),
   studiesType: z.enum(["fullTime", "partTime", "online", "evening"]),
-  localizationKmType: z.enum(["50", "100", "200", "300", "500"]).or(z.undefined()),
+  localizationKmType: z
+    .enum(["50", "100", "200", "300", "500"])
+    .or(z.undefined()),
   rankingType: z.number(),
   certType: z.number(),
   workType: z.enum(["workWithHumans", "workWithData", "workWithNature"]),
@@ -26,11 +30,18 @@ export const AllTypes = z.object({
   technologyOrHumanityType: z.number(),
   workForSocietyOrScianceType: z.number(),
 });
-
+const prisma = new PrismaClient();
 export const exampleRouter = createTRPCRouter({
   hello: publicProcedure.input(AllTypes).query(({ input }) => {
     return {
       input: input,
+    };
+  }),
+  uczelnie: publicProcedure.query(async () => {
+    const uczelnie = await prisma.university.findMany();
+    console.log("aaaaaaa", uczelnie);
+    return {
+      uczelnie,
     };
   }),
   getAll: publicProcedure.query(({ ctx }) => {
