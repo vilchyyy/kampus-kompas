@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ChevronRight } from "lucide-react";
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 import { Translation } from "react-i18next";
 import Nav from "~/components/Nav";
 import { UniversityCard } from "~/components/UniversityCard";
@@ -35,6 +35,6 @@ export default function Uczelnie() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
