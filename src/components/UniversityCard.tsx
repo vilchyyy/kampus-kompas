@@ -15,7 +15,7 @@ export const UniversityCard = ({ university }: { university: University }) => {
   console.log(university);
 
   return (
-    <Card className="h-80 w-96 flex-grow" key={university.id}>
+    <Card className="h-80 w-96 flex-grow border-2" key={university.id}>
       <CardHeader>
         <CardTitle>{university.name}</CardTitle>
         <CardDescription>Card Description</CardDescription>
