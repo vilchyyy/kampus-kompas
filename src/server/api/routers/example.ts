@@ -310,8 +310,14 @@ export const exampleRouter = createTRPCRouter({
 
     };
   }),
-  uczelnie: publicProcedure.query(async () => {
-    const uczelnie = await prisma.university.findMany();
+  uczelnie: publicProcedure.input(z.string()).query(async ({ctx, input}) => {
+    const uczelnie = await prisma.university.findMany({
+      where: {
+        name: {
+          contains: input,
+        },
+      }
+    });
     console.log("aaaaaaa", uczelnie);
     return {
       uczelnie,
@@ -319,5 +325,12 @@ export const exampleRouter = createTRPCRouter({
   }),
   getAll: publicProcedure.query(({ ctx }) => {
     return ctx.db.example.findMany();
+  }),
+  getOne: publicProcedure.input(z.number()).query(({ ctx, input }) => {
+    return ctx.db.example.findUnique({
+      where: {
+        id: input,
+      },
+    });
   }),
 });
