@@ -29,6 +29,7 @@ model University {
     kierunki  Kierunek[]
     createdAt DateTime   @default(now())
     updatedAt DateTime   @updatedAt
+    image     String?
 
     @@index([name])
 }
