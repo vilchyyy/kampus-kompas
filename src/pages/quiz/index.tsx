@@ -11,7 +11,6 @@ import { Page6 } from "~/components/QuizPages/Page6";
 import { Page7 } from "~/components/QuizPages/Page7";
 import { Page8 } from "~/components/QuizPages/Page8";
 import { Page9 } from "~/components/QuizPages/Page9";
-import { Page10 } from "~/components/QuizPages/Page10";
 import { Page11 } from "~/components/QuizPages/Page11";
 import { Page12 } from "~/components/QuizPages/Page12";
 import { Page13 } from "~/components/QuizPages/Page13";
@@ -34,10 +33,10 @@ export default function Step1() {
       <Nav />
       <div className=" mt-[-6rem] flex h-screen items-center justify-center p-2">
         <div className="flex flex-col gap-2">
-          <AnimatePresence mode="popLayout">
+          <AnimatePresence>
             {page === 0 && <Page1 nextPage={nextPage} />}
           </AnimatePresence>
-          <AnimatePresence mode="popLayout">
+          <AnimatePresence>
             {page === 1 && <Page2 nextPage={nextPage} />}
           </AnimatePresence>
           <AnimatePresence>
