@@ -251,7 +251,23 @@ export const exampleRouter = createTRPCRouter({
       score.artystyczne = 0
     }
 
-    
+    const x = score.scisle/5/ratio - score.humanistyczne/5/ratio
+    let y = 0
+    if (score.tryb === "fullTime") {
+      y -= 0.4
+    } if (score.tryb === "partTime") {
+      y += 0.4
+    } if (score.tryb === "online") {
+      y += 0.8
+     } if (score.ranking === 0) {
+      y -= 0.4
+     } if (score.ranking === 1) {
+      y -= 0.2
+     } if (score.ranking === 3) {
+      y += 0.2
+     } if (score.ranking === 4) {
+      y += 0.4
+     }
 
     for (const i of kierunki) {
       const human = Math.abs((score.humanistyczne /ratio) - i.humanistyczne)
@@ -262,8 +278,16 @@ export const exampleRouter = createTRPCRouter({
       const medyczne =   Math.abs((score.medyczne /ratio) - i.medyczne)
       const rolnicze = Math.abs((score.rolnicze /ratio) - i.rolnicze)
       const artystyczne = Math.abs((score.artystyczne /ratio) - i.artystyczne)
-      matches.push({score: human+tech+scisle+spoleczne+przyrodnicze+medyczne+rolnicze+artystyczne, uni: i.university ,tryb: i.tryb, kierunek: i.name, image: i.university?.image})
+      let bonus =0
+      if (score.ranking >0) {
+        if (i.university?.ranking && i.university?.ranking > 70) {
+            bonus = -2
+        }
+      }
+      matches.push({score:bonus+human+tech+scisle+spoleczne+przyrodnicze+medyczne+rolnicze+artystyczne, uni: i.university ,tryb: i.tryb, kierunek: i.name, image: i.university?.image})
     }
+
+    
 
     // loop through keys in score and if keys is number, divide by ratio
 
@@ -275,11 +299,14 @@ export const exampleRouter = createTRPCRouter({
         }
     }
     
+    filtered.sort((a, b) => a.score - b.score)
+    
     return {
       input: input,
       score: score,
       matches: matches,
       filtered: filtered,
+      compass: {x: x, y: y}
 
     };
   }),

@@ -1,3 +1,4 @@
+import { any } from "zod";
 import { create } from "zustand";
 
 type UserType =
@@ -23,6 +24,10 @@ type TechnologyOrHumanityType = number; //page17
 type WorkForSocietyOrScianceType = number; //page18
 
 interface FormState {
+  latitude: number;
+  setLatitude: (latitude: number) => void;
+  longitude: number;
+  setLongitude: (longitude: number) => void;
   userType: UserType;
   setUserType: (userType: UserType) => void;
   studiesType: StudiesType;
@@ -71,6 +76,10 @@ export const useFormStore = create<FormState>()((set) => ({
   userType: "parent",
   setUserType: (userType) => set({ userType }),
   studiesType: "fullTime",
+  latitude: 0,
+  setLatitude: (latitude) => set({ latitude }),
+  longitude: 0,
+  setLongitude: (longitude) => set({ longitude }),
   setStudiesType: (studiesType) => set({ studiesType }),
   localizationKmType: undefined,
   setLocalizationKmType: (localizationKmType) => set({ localizationKmType }),

@@ -5,13 +5,27 @@ import { ibm_serif } from "~/pages";
 import "rc-slider/assets/index.css";
 import { type LocalizationKmType, useFormStore } from "~/state/stateForm";
 import { useTranslation } from "react-i18next"
+import { error } from "console";
 
 interface Props {
   nextPage(arg0?: number): void;
 }
 export const Page3a = ({ nextPage }: Props) => {
-  const { setLocalizationKmType } = useFormStore();
+  const { setLocalizationKmType, setLatitude, setLongitude } = useFormStore();
   const { t } = useTranslation()
+
+  try {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      setLatitude(position.coords.latitude);
+      setLongitude(position.coords.longitude);
+    },error =>{
+      console.log(error)
+      nextPage();
+    });
+  } catch (error) {
+    console.log(error)
+    nextPage();
+  }
 
   return (
     <motion.div
