@@ -1,6 +1,5 @@
 import { PrismaClient } from "@prisma/client";
 import { log } from "console";
-import { z } from "zod";
 import { number, z } from "zod";
 import { createTRPCRouter, publicProcedure } from "~/server/api/trpc";
 
@@ -20,7 +19,6 @@ export const AllTypes = z.object({
   workType: z.enum(["workWithHumans", "workWithData", "workWithNature"]),
   workDestinationType: z.enum(["office", "science", "manual", "freelancer"]),
   studentType: z.number(),
-  setSkills:z.enum(["dataAnalyze", "communication", "creativity", "technologyUnderstanding"]),
   exchangeType: z.number(),
   areYouArtistType: z.number(),
   sociallyInterestedType: z.number(),
