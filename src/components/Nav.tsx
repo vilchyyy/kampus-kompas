@@ -18,7 +18,7 @@ export default function Nav() {
   };
   return (
     <>
-      <div className="mx-auto flex h-20 w-full items-center justify-between gap-6 px-4 hover:cursor-pointer sm:max-w-screen-2xl">
+      <div className="z-50 mx-auto flex h-20 w-full items-center justify-between gap-6 px-4 hover:cursor-pointer sm:max-w-screen-2xl">
         <div className="mx-4 flex items-center justify-center gap-6">
           <Image
             onClick={(e) => {
@@ -26,7 +26,7 @@ export default function Nav() {
               router.push("/").catch((err) => console.log(err));
             }}
             src="compass.svg"
-            className="-mr-3 h-12 w-12 min-w-max "
+            className="-mr-3 h-12 w-12 min-w-max z-50 "
             width={50}
             height={50}
             alt="logo"
@@ -36,7 +36,7 @@ export default function Nav() {
               e.preventDefault();
               router.push("/").catch((err) => console.log(err));
             }}
-            className="mr-4 hidden font-bold sm:block"
+            className="mr-4 hidden font-bold z-50 sm:block"
           >
             KampusKompas
           </p>
@@ -86,6 +86,7 @@ export default function Nav() {
             />
           )}
           <Input
+          className="z-50"
             type="text"
             value={value}
             placeholder={t("wyszukaj uczelnie...")}
@@ -102,7 +103,7 @@ export default function Nav() {
           />
           <Button className="w-10 p-2" type="submit">
             <SearchIcon
-              className="h-10 w-10"
+              className="h-10 w-10 z-50"
               onClick={() => {
                 router
                   .push(`/uczelnie?search=${value}`)
